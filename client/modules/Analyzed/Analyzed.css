@@ -1,0 +1,11 @@
+.analyzed-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.analyzed-list {
+  max-width: 700px;
+  margin: 0 20px;
+}

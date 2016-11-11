@@ -1,0 +1,14 @@
+.video-container {
+  position: fixed;
+  overflow-x: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/*@media(min-width: 414px) and (max-width: 768px) {
+  .video {
+    transform: translateX(-28%);
+  }
+} */

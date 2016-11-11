@@ -1,0 +1,19 @@
+.watson-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sentiments-container{
+  margin: auto;
+}
+
+.emotions-container {
+  margin: auto;
+}
+
+.charts-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}

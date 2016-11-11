@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '7.0'
+before_install:
+- npm install -g npm@latest
+services:
+- mongodb
+before_script:
+- sleep 15
+after_success:
+- "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
+deploy:
+  provider: heroku
+  api_key:
+    secure: iWglDruktS3NnN2ocuNdhIVkyoAZBdRNPKiXYPwhikBZ9cJjsVywsVOj4jTRmObQjidk+qzW+t2jWfC3zDLzQ9JN9zUN48+XWEdywUuS5gxUb6SYPAT1qpX0tSQW4Fh+/wHZYCQsD47UyQImOgTAfs63LkYhXJ9BSvH5BqUtP6uORQNerO4kWkAEwBiUoC1/qVCr/4h6U77YqmRPihtqU5BgqzubSvgQmFyKIkUcoQZNGQIIHVr1uR0tI5qlVhWykLtXnVzGFsfA4dyln+0ffUHJxhLG2g53oUa5AHgC2hwYCx8+m4UjokJG4P4pmloGK0O1CGnrP4oNt76k4dGPxLK3fZAHaF5YtRL92NYSWg9/DJQ+s1V07+PPRDVpY7nlQRnuDNZY6VgVkoZ5JIK9S2OKtF6gAAM+pqKterFkOnNkRquoghLqbC8+5KXwBH/ZlJxW7WX/aqNm5F4YSicOWEhqxy9sTc5x/QSpbS1GDbyfAUsVd8LNHdcUyISMcicuFm+fD5Bzg+3wMbzTqjGHV0WMXcLFXbZ2suLlXlQgH1FGVziHChuA0X8PEA5C5WAl78TAjs0gTSrevX0V4/lYo3pvuQqnjQNWzfs35YKCnhQH4J5qZlnYHVFP2rf7bll3qEd9EuTRa1D6ToDERARvcGDbU45rogTzFhmjg0rFYyk=
+  app: asurety
+notifications:
+  slack: asurety:PKS7rDgHTE2dqJNOU3pBfg5e
