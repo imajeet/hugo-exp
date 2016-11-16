@@ -1,34 +1,60 @@
 import React, { PropTypes } from 'react';
 import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import Divider from 'material-ui/Divider';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+
+const styles = {
+  appBar: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+  },
+  title: {
+    color: '#fff',
+    textAlign: 'center',
+  },
+  iconLeft: {
+    color: '#fff',
+  },
+  drawer: {
+    padding: '60px 0',
+    backgroundColor: 'transparent',
+    border: 'solid 2px #fff',
+  },
+};
 
 const Navigation = (props) => {
   return (
     <div>
       <AppBar
-        style={{backgroundColor: 'transparent'}}
+        className="appbar-container"
+        style={styles.appBar}
         title={props.title}
-        titleStyle={{color: '#000'}}
-        iconClassNameRight="muidocs-icon-navigation-expand-more"
-        iconStyleLeft={{color: '#000'}}
-        onLeftIconButtonTouchTap={props.onTapTouch}
-      >
-        <div>
-          <Drawer
-            docked={false}
-            width={200}
-            open={props.open}
-            onRequestChange={props.onTapTouch}
-          />
-        </div>
-      </AppBar>
+        titleStyle={styles.title}
+        iconStyleLeft={styles.iconLeft}
+        iconElementLeft={
+          <IconMenu
+            targetOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+            anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
+            iconButtonElement={
+              <IconButton><MoreVertIcon color={'#fff'} /></IconButton>
+            }
+          >
+            <MenuItem primaryText="Home" />
+            <MenuItem primaryText="Portfolio" />
+            <MenuItem primaryText="Me" />
+            <Divider />
+            <MenuItem primaryText="Contact" />
+          </IconMenu>}
+        zDepth={5}
+      />
     </div>
   );
 };
 
 Navigation.propTypes = {
-  onTapTouch: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
 };
 

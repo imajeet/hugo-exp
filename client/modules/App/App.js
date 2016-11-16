@@ -4,27 +4,28 @@ import Helmet from 'react-helmet';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
-
 // Import muiTheme
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import rawTheme from './AppTheme';
 import { getMuiTheme } from 'material-ui/styles';
+import rawTheme from './AppTheme';
 
 // Import Style
 import styles from './App.css';
 
+// Import animate.css
+import an from 'assets/animate.css';
+
 // Import Components
 import DevTools from './components/DevTools';
 import Navigation from './components/Navigation/Navigation';
-import Footer from './components/Footer/Footer';
 
-// Import Actions
-import { toggleDrawer } from './AppActions';
+import PortfolioVideo from '../Portfolio/components/PortfolioVideo/PortfolioVideo';
+import ferryRide from '../Portfolio/components/PortfolioVideo/ferry-ride.mp4';
 
-import { getIsDrawerOpen } from './AppReducer';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 
 export class App extends Component {
@@ -37,7 +38,6 @@ export class App extends Component {
     this.setState({ isMounted: true }); // eslint-disable-line
   }
 
-  toggleDrawer = () => this.props.dispatch(toggleDrawer());
 
   render() {
     const muiTheme = getMuiTheme(rawTheme, { userAgent: navigator ? navigator.userAgent : 'all' });
@@ -61,7 +61,18 @@ export class App extends Component {
                 },
               ]}
             />
-            <Navigation title="HugoExp" onTapTouch={this.toggleDrawer} open={this.props.open} />
+            <div
+              className={`${an.animated} ${an.fadeInDown}`}
+              style={{
+                WebkitAnimationDuration: '2s',
+                WebkitAnimationDelay: '1s',
+              }}
+            >
+              <Navigation title="HugoExp" onTapTouch={this.toggleDrawer} />
+            </div>
+
+            <PortfolioVideo srcPath={ferryRide} />
+
             <div className={styles.container}>
               {this.props.children}
             </div>
@@ -75,15 +86,11 @@ export class App extends Component {
 
 // Retrieve data from store as props
 function mapStateToProps(store) {
-  return {
-    open: getIsDrawerOpen(store),
-  };
+  return store;
 }
 
 App.propTypes = {
   children: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(App);

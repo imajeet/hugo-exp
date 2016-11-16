@@ -5,6 +5,7 @@
   min-height: 100%;
   width: auto;
   height: auto;
+  z-index: -1;
 }
 
 /*@media(min-width: 414px) and (max-width: 768px) {

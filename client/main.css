@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
   Global CSS file
 */
@@ -7,11 +8,20 @@
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 }*/
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
  body {
   margin: 0;
+	padding: 0;
   width: 100%;
 	background: #FFF;
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	overflow-x: hidden;
 }
+
+

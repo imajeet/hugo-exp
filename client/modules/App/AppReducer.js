@@ -1,5 +1,5 @@
 // Import Actions
-import { TOGGLE_ADD_POST, TOGGLE_DRAWER } from './AppActions';
+import { TOGGLE_ADD_POST } from './AppActions';
 
 // Initial State
 const initialState = {
@@ -13,10 +13,6 @@ const AppReducer = (state = initialState, action) => {
       return {
         showAddPost: !state.showAddPost,
       };
-    case TOGGLE_DRAWER:
-      return {
-        open: !state.open,
-      };
     default:
       return state;
   }
@@ -25,7 +21,6 @@ const AppReducer = (state = initialState, action) => {
 /* Selectors */
 
 export const getShowAddPost = state => state.app.showAddPost;
-export const getIsDrawerOpen = state => state.app.open;
 
 // Export Reducer
 export default AppReducer;

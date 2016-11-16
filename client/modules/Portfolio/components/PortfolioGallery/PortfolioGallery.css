@@ -1,0 +1,6 @@
+.portfolio-gallery-container {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
