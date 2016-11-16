@@ -5,6 +5,7 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import { Link } from 'react-router';
 
 const styles = {
   appBar: {
@@ -41,15 +42,20 @@ const Navigation = (props) => {
             iconButtonElement={
               <IconButton><MoreVertIcon color={'#fff'} /></IconButton>
             }
-          >
+            >
             <MenuItem primaryText="Home" />
-            <MenuItem primaryText="Portfolio" />
-            <MenuItem primaryText="Me" />
+
+            <MenuItem primaryText="Portfolio" containerElement={<Link to="/" />} />
+
+
+            <MenuItem primaryText="Me" containerElement={<Link to="/me" />} />
+
+
             <Divider />
             <MenuItem primaryText="Contact" />
           </IconMenu>}
         zDepth={5}
-      />
+        />
     </div>
   );
 };

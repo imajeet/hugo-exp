@@ -2,9 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// Import Style
-// import styles from './AboutMe.css';
-
 
 class AboutMe extends Component {
 
@@ -32,7 +29,9 @@ const mapDispatchToProps = (dispatch) => {
 AboutMe.propTypes = {
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AboutMe);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(AboutMe);
+
+export default AboutMe;

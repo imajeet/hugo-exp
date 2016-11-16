@@ -190,10 +190,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// Import Style
-	// import styles from './AboutMe.css';
-
-
 	var _ref = _jsx('div', {}, void 0, 'Hello, World');
 
 	var AboutMe = function (_Component) {
@@ -228,7 +224,12 @@
 	  return {};
 	};
 
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AboutMe);
+	// export default connect(
+	//   mapStateToProps,
+	//   mapDispatchToProps
+	// )(AboutMe);
+
+	exports.default = AboutMe;
 
 /***/ },
 /* 13 */
