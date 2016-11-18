@@ -31,9 +31,6 @@ const Portfolio = (props) => {
   return (
     <div>
       <div>
-        <PortfolioVideo srcPath={ferryVideo} />
-      </div>
-      <div>
         <PortfolioGallery data={data} />
       </div>
     </div>

@@ -1,67 +1,43 @@
 import React, { PropTypes } from 'react';
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import Divider from 'material-ui/Divider';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import Drawer from 'material-ui/Drawer';
+import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router';
-
-const styles = {
-  appBar: {
-    position: 'absolute',
-    backgroundColor: 'transparent',
-  },
-  title: {
-    color: '#fff',
-    textAlign: 'center',
-  },
-  iconLeft: {
-    color: '#fff',
-  },
-  drawer: {
-    padding: '60px 0',
-    backgroundColor: 'transparent',
-    border: 'solid 2px #fff',
-  },
-};
+import style from './Navigation.css';
 
 const Navigation = (props) => {
+  const linkedLables = {
+    Portfolio: <Link to="/portfolio" />,
+    Me: <Link to="/me" />,
+    Home: <Link to="/" />,
+  };
   return (
     <div>
-      <AppBar
-        className="appbar-container"
-        style={styles.appBar}
-        title={props.title}
-        titleStyle={styles.title}
-        iconStyleLeft={styles.iconLeft}
-        iconElementLeft={
-          <IconMenu
-            targetOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-            anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
-            iconButtonElement={
-              <IconButton><MoreVertIcon color={'#fff'} /></IconButton>
-            }
-            >
-            <MenuItem primaryText="Home" />
-
-            <MenuItem primaryText="Portfolio" containerElement={<Link to="/" />} />
-
-
-            <MenuItem primaryText="Me" containerElement={<Link to="/me" />} />
-
-
-            <Divider />
-            <MenuItem primaryText="Contact" />
-          </IconMenu>}
-        zDepth={5}
-        />
+      <Drawer
+        containerStyle={{ WebkitTransition: 'width 1s' }}
+        open={props.open}
+        width={props.width}
+      >
+        <nav className={style.menu}>
+          {
+            Object.keys(linkedLables).map(linkedLable =>
+              <FlatButton
+                containerElement={linkedLables[linkedLable]}
+                label={linkedLable}
+                labelPosition="before"
+                key={linkedLable}
+              />
+            )
+          }
+        </nav>
+      </Drawer>
     </div>
   );
 };
 
+
 Navigation.propTypes = {
-  title: PropTypes.string.isRequired,
+  open: PropTypes.bool.isRequired,
+  width: PropTypes.number.isRequired,
 };
 
 export default Navigation;

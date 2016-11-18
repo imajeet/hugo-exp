@@ -31,11 +31,24 @@ injectTapEventPlugin();
 export class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isMounted: false };
+    this.state = {
+      isMounted: false,
+      drawerOpen: true,
+      drawerWidth: 1,
+      videoMarginLeft: '0px',
+    };
   }
 
   componentDidMount() {
     this.setState({ isMounted: true }); // eslint-disable-line
+    if (window.innerWidth >= 900) {
+      window.setTimeout(() => {
+        this.setState({
+          drawerWidth: 86,
+          videoMarginLeft: '86px',
+        });
+      }, 1000);
+    }
   }
 
 
@@ -44,7 +57,7 @@ export class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
+          {/** this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools /> */}
           <div>
             <Helmet
               title="Hugo Experience"
@@ -61,17 +74,12 @@ export class App extends Component {
                 },
               ]}
             />
-            <div
-              className={`${an.animated} ${an.fadeInDown}`}
-              style={{
-                WebkitAnimationDuration: '2s',
-                WebkitAnimationDelay: '1s',
-              }}
-            >
-              <Navigation title="HugoExp" onTapTouch={this.toggleDrawer} />
-            </div>
-
-            <PortfolioVideo srcPath={ferryRide} />
+            <Navigation
+              open={this.state.drawerOpen}
+              width={this.state.drawerWidth}
+              title="HugoExp"
+            />
+            <PortfolioVideo marginLeft={this.state.videoMarginLeft} srcPath={ferryRide} />
 
             <div className={styles.container}>
               {this.props.children}
