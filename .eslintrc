@@ -30,6 +30,30 @@
       180,
       4
     ],
+    "import/newline-after-import": [
+      0
+    ],
+    "jsx-a11y/anchor-has-content": [
+      0
+    ],
+    "ava/prefer-async-await": [
+      0
+    ],
+    "import/no-named-as-default": [
+      0
+    ],
+    "class-methods-use-this": [
+      0
+    ],
+    "no-prototype-builtins": [
+      0
+    ],
+    "no-plusplus": [
+      0
+    ],
+    "import/first": [
+      0
+    ],
     "arrow-body-style": [
       0
     ],
@@ -40,6 +64,15 @@
       0
     ],
     "react/jsx-no-bind": [
+      0
+    ],
+    "arrow-parens": [
+      0
+    ],
+    "import/no-extraneous-dependencies": [
+      0
+    ],
+    "import/prefer-default-export": [
       0
     ],
     "import/no-unresolved": [

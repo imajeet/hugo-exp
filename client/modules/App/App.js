@@ -13,7 +13,6 @@ import rawTheme from './AppTheme';
 import styles from './App.css';
 
 // Import animate.css
-import an from 'assets/animate.css';
 
 // Import Components
 import DevTools from './components/DevTools';
@@ -57,7 +56,7 @@ export class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          {/** this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools /> */}
+          {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
           <div>
             <Helmet
               title="Hugo Experience"

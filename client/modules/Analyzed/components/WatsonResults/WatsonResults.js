@@ -5,7 +5,7 @@ import styles from './WatsonResults.css';
 import WatsonResultsChip from './WatsonResultsChip';
 
 const WatsonResults = (props) => {
-  const isScorePositive = score => { return score > 0 ? 'rgb(0%, 90.2%, 46.3%)' : 'rgb(83.5%, 0%, 0%)'; };
+  const isScorePositive = score => (score > 0 ? 'rgb(0%, 90.2%, 46.3%)' : 'rgb(83.5%, 0%, 0%)');
   const preparedEmotions = [];
   Object.keys(props.emotions).map((emotion) => {
     return preparedEmotions.push({

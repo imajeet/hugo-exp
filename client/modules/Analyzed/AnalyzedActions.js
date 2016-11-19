@@ -11,9 +11,7 @@ export function loadAnalyzedData(analyzedData) {
 }
 
 export function fetchAnalyzedData(name, limit) {
-  return dispatch => {
-    return callApi(`analyzed/?name=${name}&limit=${limit}`)
-      .then(res => dispatch(loadAnalyzedData(res))
-      );
-  };
+  return dispatch => callApi(`analyzed/?name=${name}&limit=${limit}`)
+    .then(res => dispatch(loadAnalyzedData(res))
+    );
 }

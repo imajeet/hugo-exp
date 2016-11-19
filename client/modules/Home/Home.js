@@ -1,11 +1,19 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Import Style
 import styles from './Home.css';
-import an from 'assets/animate.css';
+import an from '../../assets/animate.css';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentWillUnmount() {
+    console.log('WillUnmount');
+  }
 
   render() {
     const itemDetails = {
@@ -19,6 +27,9 @@ class Home extends Component {
           ${styles['home-container']}
         `}
       >
+        <div className={`${styles['home-header']}`}>
+          <h1>HugoExp</h1>
+        </div>
         <div className={`${styles['welcome-copy']}`}>
           <div className={`${styles['self-copy']}`}>
             {
@@ -43,18 +54,18 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {};
-};
+// const mapStateToProps = (state) => {
+//   return {};
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {};
+// };
 
 Home.propTypes = {
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  // mapStateToProps,
+  // mapDispatchToProps
 )(Home);

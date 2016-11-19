@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import Drawer from 'material-ui/Drawer';
 import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router';
-import an from 'assets/animate.css';
+import an from '../../../../assets/animate.css';
 import style from './Navigation.css';
 
 

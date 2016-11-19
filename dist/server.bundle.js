@@ -68,7 +68,7 @@
 /* 4 */
 /***/ function(module, exports) {
 
-	module.exports = require("redux");
+	module.exports = require("react-router");
 
 /***/ },
 /* 5 */
@@ -94,7 +94,7 @@
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	var rawBaseTheme = _extends({}, _styles.spacing, {
-	  fontFamily: 'Roboto, sans-serif',
+	  fontFamily: 'AvenirNext, sans-serif',
 	  palette: {
 	    primary1Color: '#0078C5',
 	    primary2Color: '#0066FF',
@@ -151,16 +151,10 @@
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-router");
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
 	module.exports = require("webpack");
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -178,9 +172,166 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(1);
+	var _flexboxgrid = {
+	  "container-fluid": "_29-OKwO_efTKNjmaACRVYm",
+	  "container": "UxsnHqz8rBg35H3L7gXjX",
+	  "row": "_38rSqWYURLlCgxmlz43VL",
+	  "reverse": "_3gso2BicM_MO6XQi5s1j5E",
+	  "col": "_3z2vGynnYT5InEXW0kmZgd",
+	  "col-xs": "_25lK3qvEmwV_2KoSPOi3i1",
+	  "col-xs-1": "_35s64GUFICrcvgYThuBTNo",
+	  "col-xs-2": "_2K-1uR9_kM7cjsK2wJBFJM",
+	  "col-xs-3": "_3PFyNTYcDAY_KGKCosWb_a",
+	  "col-xs-4": "_1-HbiMIVuoA868U3LL5pZ8",
+	  "col-xs-5": "_2OlsC3PTdBtwVKPHt7s-U0",
+	  "col-xs-6": "_3pNC2KVuz-a5pBRt1hQX_O",
+	  "col-xs-7": "_2eKUdd41QX0-Enj0LEO04e",
+	  "col-xs-8": "_3fQWLVFV65d82HJTJMgqnF",
+	  "col-xs-9": "_2nw8kTE1jMDYudbppIdk2F",
+	  "col-xs-10": "_3HMllqWqMXa1YerK-QYSvU",
+	  "col-xs-11": "_2mIYjzUUcqX6f6BwVz2tZO",
+	  "col-xs-12": "_2OuOM5OdBhHKzOXRxrGuOR",
+	  "col-xs-offset-0": "_3uE4EBUq7GP1-BpUJJM6US",
+	  "col-xs-offset-1": "_2jiLP_eAOhvX-PwNYntJ2V",
+	  "col-xs-offset-2": "_1li6jq1TE0klkqdXrI_4dz",
+	  "col-xs-offset-3": "_22YUGphpvF0_YefRBuCyr-",
+	  "col-xs-offset-4": "sDDpp3zhwy4pC-u1V2n6U",
+	  "col-xs-offset-5": "_2huPw7cg0fnSxjjuTAApM7",
+	  "col-xs-offset-6": "_1BRdUhyU826wTzWMZAX_wV",
+	  "col-xs-offset-7": "_1d0V-mJHzIDwMPWmUH4J8Q",
+	  "col-xs-offset-8": "_36vH40AfHw3kEUBbtGNJes",
+	  "col-xs-offset-9": "_2l-g8PCsa21BwctbCk0tFx",
+	  "col-xs-offset-10": "_1rv0SBRblAlrpXYz6gA5H8",
+	  "col-xs-offset-11": "_14texM3_6mYHFVAKF6bSHD",
+	  "col-xs-offset-12": "Ln_mPAJqPNeSutvpK3gpf",
+	  "start-xs": "_1b9iSnNRA69gmQOi6RokYu",
+	  "center-xs": "_29ydbJoLKvCt65GUlik_1O",
+	  "end-xs": "sY1wJLzhJeC7A1cAJcmsF",
+	  "top-xs": "Bcm3EwDWzpHKLhr5IGCE_",
+	  "middle-xs": "yv8Beq4tQkUs7WD6lxZqm",
+	  "bottom-xs": "_2DteXH_ys1a_62uUKboh-Y",
+	  "around-xs": "_3MLcf4OKqtJlJMmrbQUcup",
+	  "between-xs": "_3ySwHjgHjYgb-vZ7XkHd2W",
+	  "first-xs": "xLanyK1j-31sAC62sxQoQ",
+	  "last-xs": "_2CiN74wZf3jZe6v8uK9Z6x",
+	  "col-sm": "_367_HvHO6rPfWxqMgPiAjO",
+	  "col-sm-1": "_2enWPLmlvSxjo2GegAR77e",
+	  "col-sm-2": "_5a5DtKjfKdRvS_1Z_WyP5",
+	  "col-sm-3": "_27m28xaJAeXQ7nqPLxZBfg",
+	  "col-sm-4": "_2f1IAcPDzFsqg29hZAQ4RW",
+	  "col-sm-5": "_1eQvcAPh_eWEsv37Pt7oMb",
+	  "col-sm-6": "_1cyE-Llb0uYQfrDkf5lGKP",
+	  "col-sm-7": "OCmIYLgdDt7hJpyWftO9Z",
+	  "col-sm-8": "_3OsGDte3EcP_SsCt5PKCP4",
+	  "col-sm-9": "_316ZhxAvS1Fg8GWGS-y6uE",
+	  "col-sm-10": "_2DBTVrh7Unoo3SkZw6ngIF",
+	  "col-sm-11": "yozOA4LyXjFb3LMXTMmQ8",
+	  "col-sm-12": "_1wJoUFVQmw971pAam29bAE",
+	  "col-sm-offset-0": "_3kOFIJ_3gqWtG-iTQp3449",
+	  "col-sm-offset-1": "_1yF4xoHg7GJ5ZDxSLBFEXf",
+	  "col-sm-offset-2": "_2qeazt34RWY2bsHRgBSy_S",
+	  "col-sm-offset-3": "QFHR5bJPVFznzZ_cY8QBJ",
+	  "col-sm-offset-4": "_1KdpNuD86s-xwchW6k0Mc1",
+	  "col-sm-offset-5": "_3msJTGKb3CVroGEUnaaqw0",
+	  "col-sm-offset-6": "_2zASSVVn6eOVaz2Jgm3sRJ",
+	  "col-sm-offset-7": "_1Z4EMzifUgqdDSmg1pSjel",
+	  "col-sm-offset-8": "_2Q7zoSA7C2y5tOv-bIZmoI",
+	  "col-sm-offset-9": "_1rJenggMghYdJbNJ5TuQJE",
+	  "col-sm-offset-10": "_2nz2lKcDC18VLHbNFGiUCo",
+	  "col-sm-offset-11": "_1_niRfRoE-EdzBurGTUiR5",
+	  "col-sm-offset-12": "_3w_djO7ZTz3mUlDHRD0KWy",
+	  "start-sm": "ys_HsRJ0NYYbHTTtewFUk",
+	  "center-sm": "_2VSW8F6PhXOffyGLniPdc7",
+	  "end-sm": "_1IhY52xkFGxtIKwuGQ9IUI",
+	  "top-sm": "_3RoaikS8vWHJNQf8N-nsu-",
+	  "middle-sm": "_2siqbT5S8l3m-RXarQdT7f",
+	  "bottom-sm": "_3tHpmenNFOT35X3vh0Ujmn",
+	  "around-sm": "_278Tz-hGcFIo04qCcSsscZ",
+	  "between-sm": "OJy278i54RZ8AynlnLLXg",
+	  "first-sm": "CggZvLL2vowB6ywV65gf2",
+	  "last-sm": "F2EKQ5GjS8sf2Ey63w6GL",
+	  "col-md": "UY_EhDzrc1y_SrHx4-0AG",
+	  "col-md-1": "_39SHGDpGrAjTd-CvkvXvz5",
+	  "col-md-2": "_3vdiBjWmXeBQ1NCTzL5PRi",
+	  "col-md-3": "RaVJJKSt9SR08lKEUX_-H",
+	  "col-md-4": "_1RrFTmg1IMFD5XJgUyrEsJ",
+	  "col-md-5": "_3e5qC215p4rFpHdNw_qC-",
+	  "col-md-6": "_1ngmymzsSjd_XtBPIM_psL",
+	  "col-md-7": "_2JoVtS5Xo99DQWkKwEWBAs",
+	  "col-md-8": "_2gIM1I8spLFK5r5K6aBos8",
+	  "col-md-9": "_3T8mUFN7QhRhgEEPCCFx8M",
+	  "col-md-10": "_3VhLw8uq8SKKmU_jHjqVjg",
+	  "col-md-11": "_3Yc9ttY92_SpkUhuDcNbYs",
+	  "col-md-12": "_2ZfdkmgsK396ATHHvgXX0o",
+	  "col-md-offset-0": "_29-DfHrH25e6qWmc7cR6EP",
+	  "col-md-offset-1": "_23bvUjqsR_oJyEi6HTp7hm",
+	  "col-md-offset-2": "WdY_mW_TCDzCPsxlSEbCP",
+	  "col-md-offset-3": "_26DzX6oamfPPx662KY85yY",
+	  "col-md-offset-4": "_2JRnFCfkSXeBhLQdzHnjQG",
+	  "col-md-offset-5": "_1vT0C-1Vr66mmSWh_ehDP0",
+	  "col-md-offset-6": "_3x6tUEiFG_l-UecYgxtXxK",
+	  "col-md-offset-7": "_1fTil3wrhsu5PvKqJFc0qC",
+	  "col-md-offset-8": "_2IoS0BNG7TZrwURE3ny_Oa",
+	  "col-md-offset-9": "_1eVH7nWqW792N68Y39dwdR",
+	  "col-md-offset-10": "_5vhGtRv17CU3r9l-q2SWx",
+	  "col-md-offset-11": "_2etmbQpFiQ4bsGm7A-SGQe",
+	  "col-md-offset-12": "_yKP50J6xNR2wQDdlybQr",
+	  "start-md": "eXwvSe4l03TDIBfWUNBZ6",
+	  "center-md": "_2BVDrHg6pP-9kN0N_bKr74",
+	  "end-md": "MpZ5F3XsEZyyt1aLI7mgU",
+	  "top-md": "_39qN5vlgUbpXrxStEsLdXz",
+	  "middle-md": "Vad3zrrnT8oSHH0gE1nmB",
+	  "bottom-md": "_2qkdKQHKL-kz-WBpWBzN3d",
+	  "around-md": "_2RJvbf09C8BnIN1PN4DR3w",
+	  "between-md": "_3MZP-rVOaS1sziiOjZTj4W",
+	  "first-md": "_3hlkWQZlLmBhscX283bbcm",
+	  "last-md": "_15BZ8GYfrZKxUR-FN5HfBy",
+	  "col-lg": "_2snoobF4mi3GWL45ZHyu_f",
+	  "col-lg-1": "_15BP_oPtmb4whpz2aTg4ui",
+	  "col-lg-2": "UZvU6DLFU2hYnoeth8pDn",
+	  "col-lg-3": "YK8ZAh27sDk9Uc3NOziY_",
+	  "col-lg-4": "_1LKXl04PnIK84T6hSZTZdC",
+	  "col-lg-5": "_3wiu6P_ZHQy9c9CbTBspg-",
+	  "col-lg-6": "_1Eu3USNhD1hXD-yrV9DT5j",
+	  "col-lg-7": "_14x2Pq6ek332gYeYmgp-Pw",
+	  "col-lg-8": "_15fV3eN5h8iVdxyfrQ0KS4",
+	  "col-lg-9": "_2sVGq5FvLEBZTugSZg-a1V",
+	  "col-lg-10": "EHiH_7OXvVvQpdY96fIBj",
+	  "col-lg-11": "C44M3gN2MN2jVqCXHg9tR",
+	  "col-lg-12": "e04ajECMMxWBFQNBwmcGN",
+	  "col-lg-offset-0": "uVmEQVgwUhbAIKFX9Cuod",
+	  "col-lg-offset-1": "_21s_K3UwJnqdCaYMRLo92F",
+	  "col-lg-offset-2": "_6kDtklUuOg9CrDcRgtT1F",
+	  "col-lg-offset-3": "fvaMrygCuqJgwOt4h_aSV",
+	  "col-lg-offset-4": "_1zk6NWX0AHFiylnh1zGIhe",
+	  "col-lg-offset-5": "_3CUKEpjcdver3w_2r0VqqJ",
+	  "col-lg-offset-6": "_3BeScWiNNGawxB8IxxtyU4",
+	  "col-lg-offset-7": "ewvWkcI0GbXc9i5FRgovO",
+	  "col-lg-offset-8": "_1EwgnMbtMufLC_lYLSs5SF",
+	  "col-lg-offset-9": "_1693_jN5bw4o3aBKTH2tI-",
+	  "col-lg-offset-10": "_2Aqn5VuVClt6Zi0gA6FQRU",
+	  "col-lg-offset-11": "_273kLInr-3dMdI0-17bZQI",
+	  "col-lg-offset-12": "mYI4B7NQ7mOBZglyTFNK4",
+	  "start-lg": "vS5Sz0sZcBByTOuou5c3b",
+	  "center-lg": "_1HfDr5jAu7JK1m9BtHGu2-",
+	  "end-lg": "_2FAiOGTEp5CmbGbG841xno",
+	  "top-lg": "_1YA15h9QT-UCQOIcYisar9",
+	  "middle-lg": "BPqDQ-_VrOUUf9QEOGsDs",
+	  "bottom-lg": "_3V5F9TV-kwM-mQWrAWokhw",
+	  "around-lg": "_2yIkUW3fOVHq-uwtCODZpT",
+	  "between-lg": "_3VBogyrwpAEL9yATv9RX88",
+	  "first-lg": "_2HJXNlWUWI355mvqit4Drp",
+	  "last-lg": "_2UFO6WYCJLXPFUGKP4dRsI"
+	};
 
-	var _redux = __webpack_require__(4);
+	var _flexboxgrid2 = _interopRequireDefault(_flexboxgrid);
+
+	var _AboutMe = {
+	  "about-me-container": "yJkyMSIXTbSoh3oojXgoW",
+	  "about-me-copy": "_3VDbt_KoWB5T-ZHVICZae3"
+	};
+
+	var _AboutMe2 = _interopRequireDefault(_AboutMe);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -190,7 +341,17 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var _ref = _jsx('div', {}, void 0, 'Hello, World');
+	var _ref = _jsx('p', {}, void 0, 'I am currently Software Engineer at a telecommunication startup, CallPal, where we\u2019ve created an Application that allows users to call any where for free, mobile-to-mobile, or mobile-to-landline.');
+
+	var _ref2 = _jsx('p', {}, void 0, 'My journey as a Coder began a few years ago and it was during my freshman year of college where I took my first programming course in C++ and learned the basics of programming. During my curriculum, I learned Java, various data structures and the algorithms to go with them. I became subtly obsessed with how code looks and have since strived to write human readable code.');
+
+	var _ref3 = _jsx('p', {}, void 0, 'Since College, I\u2019ve taken upon myself to become Fullstack JavaScript Developer where I work primarily with NodeJS which is a C++ Program that essentially let\u2019s you write JavaScript to create many applications. I\u2019ve used NodeJS to create CRON Jobs, run data migration tasks in parallel, author RESTful APIs using ExpressJS to be consumed by web & mobile clients, built front-end projects with Gulp or Webpack, etc. There are many problems that can be solved with NodeJS; from simple to complex.');
+
+	var _ref4 = _jsx('p', {}, void 0, 'My first professional career began 3 years ago when I became a Front-end Developer for SapientNitro; a marketing agency and I was in a team dedicated to handling Fiat Chrysler\u2019s digital footprint. My main role was cemented around Fiat Chrysler\u2019s Dodge brand and as such I created a few modules for their websites and put together over 6 pages using the Interwoven CMS. My stay there was both inspiring and challenging and it gave me a taste of real world coding experience.');
+
+	var _ref5 = _jsx('p', {}, void 0, 'The best part about making a living off coding is delivering a product while meeting client satisfaction and deadlines!');
+
+	var _ref6 = _jsx('p', {}, void 0, 'I\u2019ve also done freelance for locals and am always seeking to stay up to date with modern technologies.');
 
 	var AboutMe = function (_Component) {
 	  _inherits(AboutMe, _Component);
@@ -209,20 +370,20 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _ref;
+	      return _jsx('div', {
+	        className: _AboutMe2.default['about-me-container'] + ' ' + _flexboxgrid2.default['container-fluid']
+	      }, void 0, _jsx('div', {
+	        className: '\n            ' + _AboutMe2.default['about-me-copy'] + '\n            ' + _flexboxgrid2.default['col-sm-4'] + ' \n            ' + _flexboxgrid2.default['col-sm-offset-3'] + ' \n            ' + _flexboxgrid2.default['col-xs-10'] + '  \n            ' + _flexboxgrid2.default['col-xs-offset-2'] + '  \n          '
+	      }, void 0, _ref, _ref2, _ref3, _ref4, _ref5, _ref6));
 	    }
 	  }]);
 
 	  return AboutMe;
 	}(_react.Component);
 
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {};
-	};
-
-	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return {};
-	};
+	// const mapStateToProps = (state) => {
+	//   return {};
+	// };
 
 	// export default connect(
 	//   mapStateToProps,
@@ -232,7 +393,7 @@
 	exports.default = AboutMe;
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -269,7 +430,7 @@
 	}
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -280,7 +441,7 @@
 	});
 	exports.getAnalyzedData = undefined;
 
-	var _AnalyzedActions = __webpack_require__(13);
+	var _AnalyzedActions = __webpack_require__(12);
 
 	var initialState = {
 	  analyzedData: []
@@ -308,7 +469,7 @@
 	exports.default = AnalyzedReducer;
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -342,7 +503,7 @@
 	}, void 0, _jsx(_reduxDevtoolsLogMonitor2.default, {})));
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -354,8 +515,7 @@
 
 	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 
-	// Import Style
-	// import styles from './Portfolio.css';
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(0);
 
@@ -363,82 +523,14 @@
 
 	var _reactRedux = __webpack_require__(1);
 
-	var _PortfolioGallery = __webpack_require__(51);
-
-	var _PortfolioGallery2 = _interopRequireDefault(_PortfolioGallery);
-
-	var _PortfolioVideo = __webpack_require__(17);
-
-	var _PortfolioVideo2 = _interopRequireDefault(_PortfolioVideo);
-
-	var _ferryRide = '/' + "420ce2b875f6469edac97c56f40d44f0.mp4";
-
-	var _ferryRide2 = _interopRequireDefault(_ferryRide);
-
-	var _cyron = '/' + "f285aa1925c8121f6ff9dcd8ab8391b3.png";
-
-	var _cyron2 = _interopRequireDefault(_cyron);
-
-	var _pbs = '/' + "ccb3460777c2cab9fff8667403505bc1.png";
-
-	var _pbs2 = _interopRequireDefault(_pbs);
-
-	var _asurety = '/' + "f3bb5d434ff2e832a7ef0e92d81f6454.png";
-
-	var _asurety2 = _interopRequireDefault(_asurety);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  cardImagePath: _cyron2.default,
-	  title: 'Cyron I/O',
-	  link: 'http://cyron.co/'
-	}, {
-	  cardImagePath: _pbs2.default,
-	  title: 'Premier Boat Services',
-	  link: 'http://pbs-express.herokuapp.com/'
-	}, {
-	  cardImagePath: _asurety2.default,
-	  title: 'Asurety',
-	  link: 'https://asurety.herokuapp.com/'
-	}];
-
-	var _ref = _jsx('div', {}, void 0, _jsx('div', {}, void 0, _jsx(_PortfolioGallery2.default, {
-	  data: data
-	})));
-
-	var Portfolio = function Portfolio(props) {
-	  return _ref;
+	var _Home = {
+	  "home-container": "_2hUQ84X6DC3wV2SiOXHncQ",
+	  "welcome-copy": "_3kooRbZxSFyDOkdn_mJPjg",
+	  "self-copy": "_1e6g9SSbSUjS-LMClxquCl",
+	  "item": "_2XOcjXfvYAq48mmfg5XUA0"
 	};
 
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {};
-	};
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Portfolio);
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
-
-	var _react = __webpack_require__(0);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _PortfolioVideo = {
-	  "video-container": "_1XSl-EwztuUwLkoUTJfyiJ"
-	};
-
-	var _PortfolioVideo2 = _interopRequireDefault(_PortfolioVideo);
+	var _Home2 = _interopRequireDefault(_Home);
 
 	var _animate = {
 	  "animated": "_3r0mq9S7Wc2cm68zTdSanO",
@@ -525,29 +617,135 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var PortfolioVideo = function PortfolioVideo(props) {
-	  return _jsx('video', {
-	    className: _PortfolioVideo2.default['video-container'] + ' ' + _animate2.default.fadeIn,
-	    style: {
-	      marginLeft: '' + props.marginLeft,
-	      WebkitTransition: 'margin-left 1s',
-	      WebkitAnimationDuration: '2s'
-	    },
-	    preload: true,
-	    playsInline: true,
-	    autoPlay: true,
-	    muted: true,
-	    loop: true
-	  }, void 0, _jsx('source', {
-	    src: props.srcPath,
-	    type: 'video/mp4'
-	  }));
-	};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	exports.default = PortfolioVideo;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// Import Style
+
+
+	var Home = function (_Component) {
+	  _inherits(Home, _Component);
+
+	  function Home(props) {
+	    _classCallCheck(this, Home);
+
+	    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(Home, [{
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      console.log('WillUnmount');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var itemDetails = {
+	        Technical: 'A natural tendency to consider the mechanics of things.',
+	        Visionary: 'I seek to capture the vision required to complete tasks.',
+	        Passionate: 'To continue learning is to keep the mind young; I advocate towards continous growth.'
+	      };
+	      return _jsx('div', {
+	        className: '\n          ' + _Home2.default['home-container'] + '\n        '
+	      }, void 0, _jsx('div', {
+	        className: '' + _Home2.default['welcome-copy']
+	      }, void 0, _jsx('div', {
+	        className: '' + _Home2.default['self-copy']
+	      }, void 0, Object.keys(itemDetails).map(function (detail, i) {
+	        return _jsx('div', {
+	          className: _Home2.default.item + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInLeft,
+	          style: {
+	            WebkitAnimationDelay: i + 1 + 's',
+	            WebkitAnimationDuration: '1s'
+	          }
+	        }, detail, _jsx('h3', {}, void 0, detail), _jsx('p', {}, void 0, itemDetails[detail]));
+	      }))));
+	    }
+	  }]);
+
+	  return Home;
+	}(_react.Component);
+
+	// const mapStateToProps = (state) => {
+	//   return {};
+	// };
+
+	// const mapDispatchToProps = (dispatch) => {
+	//   return {};
+	// };
+
+	exports.default = (0, _reactRedux.connect)()(Home);
 
 /***/ },
-/* 18 */
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
+
+	// Import Style
+	// import styles from './Portfolio.css';
+
+	var _react = __webpack_require__(0);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PortfolioGallery = __webpack_require__(50);
+
+	var _PortfolioGallery2 = _interopRequireDefault(_PortfolioGallery);
+
+	var _cyron = '/' + "f285aa1925c8121f6ff9dcd8ab8391b3.png";
+
+	var _cyron2 = _interopRequireDefault(_cyron);
+
+	var _pbs = '/' + "ccb3460777c2cab9fff8667403505bc1.png";
+
+	var _pbs2 = _interopRequireDefault(_pbs);
+
+	var _asurety = '/' + "f3bb5d434ff2e832a7ef0e92d81f6454.png";
+
+	var _asurety2 = _interopRequireDefault(_asurety);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  cardImagePath: _cyron2.default,
+	  title: 'Cyron I/O',
+	  link: 'http://cyron.co/'
+	}, {
+	  cardImagePath: _pbs2.default,
+	  title: 'Premier Boat Services',
+	  link: 'http://pbs-express.herokuapp.com/'
+	}, {
+	  cardImagePath: _asurety2.default,
+	  title: 'Asurety',
+	  link: 'https://asurety.herokuapp.com/'
+	}];
+
+	var _ref = _jsx('div', {}, void 0, _jsx('div', {}, void 0, _jsx(_PortfolioGallery2.default, {
+	  data: data
+	})));
+
+	var Portfolio = function Portfolio() {
+	  return _ref;
+	};
+
+	exports.default = Portfolio;
+
+/***/ },
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -577,34 +775,40 @@
 	exports.default = _mongoose2.default.model('Post', postSchema);
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports) {
 
 	module.exports = require("lodash");
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = require("material-ui/Avatar");
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = require("material-ui/FlatButton");
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = require("material-ui/List");
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports) {
 
 	module.exports = require("material-ui/Paper");
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	module.exports = require("redux");
 
 /***/ },
 /* 24 */
@@ -624,7 +828,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(10);
+	var _reactRouter = __webpack_require__(4);
 
 	var _App = __webpack_require__(45);
 
@@ -647,7 +851,8 @@
 	  // Require async routes only in development for react-hot-reloader to work.
 	  __webpack_require__(38);
 	  __webpack_require__(16);
-	  __webpack_require__(12);
+	  __webpack_require__(15);
+	  __webpack_require__(11);
 	}
 
 	// react-router setup with code-splitting
@@ -658,14 +863,21 @@
 	}, void 0, _jsx(_reactRouter.IndexRoute, {
 	  getComponent: function getComponent(nextState, cb) {
 	    Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	      cb(null, __webpack_require__(16).default);
+	      cb(null, __webpack_require__(15).default);
 	    }).bind(null, __webpack_require__));
 	  }
 	}), _jsx(_reactRouter.Route, {
 	  path: '/me',
 	  getComponent: function getComponent(nextState, cb) {
 	    Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	      cb(null, __webpack_require__(12).default);
+	      cb(null, __webpack_require__(11).default);
+	    }).bind(null, __webpack_require__));
+	  }
+	}), _jsx(_reactRouter.Route, {
+	  path: '/portfolio',
+	  getComponent: function getComponent(nextState, cb) {
+	    Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
+	      cb(null, __webpack_require__(16).default);
 	    }).bind(null, __webpack_require__));
 	  }
 	}));
@@ -682,13 +894,13 @@
 	});
 	exports.configureStore = configureStore;
 
-	var _redux = __webpack_require__(4);
+	var _redux = __webpack_require__(23);
 
 	var _reduxThunk = __webpack_require__(80);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _DevTools = __webpack_require__(15);
+	var _DevTools = __webpack_require__(14);
 
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 
@@ -758,7 +970,7 @@
 	  });
 	};
 
-	var _post = __webpack_require__(18);
+	var _post = __webpack_require__(17);
 
 	var _post2 = _interopRequireDefault(_post);
 
@@ -858,7 +1070,7 @@
 	"use strict";
 	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
 
-	var webpack = __webpack_require__(11);
+	var webpack = __webpack_require__(10);
 	var cssnext = __webpack_require__(72);
 	var postcssFocus = __webpack_require__(73);
 	var postcssReporter = __webpack_require__(74);
@@ -1006,9 +1218,9 @@
 
 	var _WatsonResults2 = _interopRequireDefault(_WatsonResults);
 
-	var _AnalyzedActions = __webpack_require__(13);
+	var _AnalyzedActions = __webpack_require__(12);
 
-	var _AnalyzedReducer = __webpack_require__(14);
+	var _AnalyzedReducer = __webpack_require__(13);
 
 	var _Analyzed = {
 	  "analyzed-container": "_2CWl_0qF43wgFMfpwbI5QE",
@@ -1113,7 +1325,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _List = __webpack_require__(22);
+	var _List = __webpack_require__(21);
 
 	var _ListItem = __webpack_require__(40);
 
@@ -1153,13 +1365,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _List = __webpack_require__(22);
+	var _List = __webpack_require__(21);
 
-	var _Avatar = __webpack_require__(20);
+	var _Avatar = __webpack_require__(19);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
-	var _Paper = __webpack_require__(23);
+	var _Paper = __webpack_require__(22);
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -1397,7 +1609,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Paper = __webpack_require__(23);
+	var _Paper = __webpack_require__(22);
 
 	var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -1469,7 +1681,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Avatar = __webpack_require__(20);
+	var _Avatar = __webpack_require__(19);
 
 	var _Avatar2 = _interopRequireDefault(_Avatar);
 
@@ -1538,90 +1750,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _animate = {
-	  "animated": "_3r0mq9S7Wc2cm68zTdSanO",
-	  "infinite": "_39g1891yxx_Ju5xjjy1jzn",
-	  "hinge": "_2FeOisFrfOoF3CPqiRPwDs",
-	  "flipOutX": "GRvy3Rtqk_p1WA4ISw17X",
-	  "flipOutY": "_3sHrEPcTQ8wy_g_7xhYUaq",
-	  "bounceIn": "FNqy24qpvuWyN324h1jQt",
-	  "bounceOut": "M4TLNKZvAt6Euon8OTBSg",
-	  "bounce": "_2R-8W-5pB4ZGcRYTEm0eUz",
-	  "flash": "_2bxipBCixhcu4JWkIbUnAl",
-	  "pulse": "_18k3lDKsSFZyKWzbSDzOZ0",
-	  "rubberBand": "VifMYJ2Dm9nu8CYeXZN_O",
-	  "shake": "v9onn00ZAX0JyFxDMtoOa",
-	  "headShake": "gJo1FSJp10TL_AP_mhaJX",
-	  "swing": "_3HkZbNny1NUWD0tT9HJlNQ",
-	  "tada": "pCGrTRmQAMKrWrG5tBXG_",
-	  "wobble": "_3XR4NjvZjuLZfqM1S0PgOm",
-	  "jello": "_22pDETzONWsYfkyibrHBUr",
-	  "bounceInDown": "_1BtMguP7zLzQ7vus2Oz8oC",
-	  "bounceInLeft": "ChJ6Wvpi__wzp0IeczBT8",
-	  "bounceInRight": "_3NEBDIFhuM7UiBTt5T9cuB",
-	  "bounceInUp": "_1XNDgYlpOLWPmUbein5Svz",
-	  "bounceOutDown": "_7sCwUF6gRjuEGQbu8vZJT",
-	  "bounceOutLeft": "_2zWwbS3b5HSj5wvCjP0g_Z",
-	  "bounceOutRight": "_3ItUJv3aRNqZjnCDSQfooL",
-	  "bounceOutUp": "_1TbBPhQCK_Tj3eRb5HRg0V",
-	  "fadeIn": "_1dfHUeEigqZKaz9VqhwCWb",
-	  "fadeInDown": "_3YjYpd53_FQTd6sY394muf",
-	  "fadeInDownBig": "_2oXogJH6ealdNM7hq8By5w",
-	  "fadeInLeft": "_37TO6w-qRdn360Q56rwMlF",
-	  "fadeInLeftBig": "_3k5qTpWazjJzryVgPMPZmY",
-	  "fadeInRight": "_2G3Ryc3I1emKLro-w0mJLl",
-	  "fadeInRightBig": "gIzrJDqgjX8oX3QmEYxw3",
-	  "fadeInUp": "kWsa6kBxkGLypi4-mU6bU",
-	  "fadeInUpBig": "_1kN6Plon06A4RFVocStYAP",
-	  "fadeOut": "_12yNe2uIRjfF-wFv3Ps6fZ",
-	  "fadeOutDown": "_3lMvLY2YA_OtJvvcJROZDl",
-	  "fadeOutDownBig": "_33uAMEQeeC060Xw8FFwi8i",
-	  "fadeOutLeft": "_1DOKHBu6380bnIsgmYH7pQ",
-	  "fadeOutLeftBig": "_1-Irat2opOfE8VFQKtByBa",
-	  "fadeOutRight": "_2AprXBXBi-bRJOrIeRn4zY",
-	  "fadeOutRightBig": "_1KUEmm84HNN9F7B6YxKLYC",
-	  "fadeOutUp": "_1AdjSRFCKFYF-uEHcrqY_-",
-	  "fadeOutUpBig": "_1fvHvkROMAciZl08yk151f",
-	  "flip": "SZnDis1iCYaZX2iAka0AD",
-	  "flipInX": "_3KaCi8BFXWJedh5kv8NPHs",
-	  "flipInY": "_2bbm1f20KPAO-NOHFoSMkV",
-	  "lightSpeedIn": "_3UZT4yJVHiFSzESjY_vkW3",
-	  "lightSpeedOut": "_2Vz9L__gi00kBa_U9jsKbH",
-	  "rotateIn": "eh61XgjfkBJXam5A1nbyv",
-	  "rotateInDownLeft": "jW4C5DaKtsrF7iIlt77Hl",
-	  "rotateInDownRight": "dzPOAmrkxK4kqf1Qi3YED",
-	  "rotateInUpLeft": "f6AuH8cii2M9M4o_puCoV",
-	  "rotateInUpRight": "_97N163Rl8VAJp-g0y9uAB",
-	  "rotateOut": "_28YRzI46SAC67e2w1kqIHy",
-	  "rotateOutDownLeft": "_3F-rBkOPeY6peSGn0KaHi6",
-	  "rotateOutDownRight": "_3QaeUebvm_hDmM8XyKDx-c",
-	  "rotateOutUpLeft": "_3OdjVJLA4C4r6OJLu54tPK",
-	  "rotateOutUpRight": "_3wZ8YsrBU1ssIYWNrTWdop",
-	  "rollIn": "JZMlyQJfPBvaAOEQ0_lqO",
-	  "rollOut": "Ei5yJnm7U8ou7wxwwh465",
-	  "zoomIn": "_31TiMTHefHKQyNtpgnxdJG",
-	  "zoomInDown": "_3Dkl1rEapNChrq-5-Q621T",
-	  "zoomInLeft": "_2gfS98LQ8P5YfRyu05o9Jp",
-	  "zoomInRight": "_3BmL4vMvU9kIIjnORZ_3S_",
-	  "zoomInUp": "_1aUktT-M7KaBb6KTk_Fi60",
-	  "zoomOut": "l87T1ZcL5PJsHt5IgKobT",
-	  "zoomOutDown": "_11KSanMj6lgSXviEP1jsgJ",
-	  "zoomOutLeft": "_14_r8yqvj0XJL2br0Iv1HJ",
-	  "zoomOutRight": "H3PkUBeHMjR9HK8LwfcmS",
-	  "zoomOutUp": "_7HIP_dYIaROGx5nSoGFF2",
-	  "slideInDown": "_2-kwH364DBmQfpvHTbOqCb",
-	  "slideInLeft": "_1iptQXrynUtTrun5cECksu",
-	  "slideInRight": "_1-YHRccTFOZm-V46e15nr3",
-	  "slideInUp": "_1ToTZgcjGMaYpiWaVlOjyq",
-	  "slideOutDown": "_29G91APzNGaUj-_McqEA0u",
-	  "slideOutLeft": "_2qHPXO_uFCk50SG5DEmn7a",
-	  "slideOutRight": "_2gxm9oRHDlm5mjqhTdsk15",
-	  "slideOutUp": "_3VEaDz-Iae1m_S61Co6RE6"
-	};
-
-	var _animate2 = _interopRequireDefault(_animate);
-
-	var _DevTools = __webpack_require__(15);
+	var _DevTools = __webpack_require__(14);
 
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 
@@ -1629,7 +1758,7 @@
 
 	var _Navigation2 = _interopRequireDefault(_Navigation);
 
-	var _PortfolioVideo = __webpack_require__(17);
+	var _PortfolioVideo = __webpack_require__(52);
 
 	var _PortfolioVideo2 = _interopRequireDefault(_PortfolioVideo);
 
@@ -1652,7 +1781,6 @@
 
 
 	// Import animate.css
-
 
 	// Import Components
 
@@ -1689,8 +1817,8 @@
 	      if (window.innerWidth >= 900) {
 	        window.setTimeout(function () {
 	          _this2.setState({
-	            drawerWidth: 90,
-	            videoMarginLeft: '90px'
+	            drawerWidth: 86,
+	            videoMarginLeft: '86px'
 	          });
 	        }, 1000);
 	      }
@@ -1814,13 +1942,6 @@
 	});
 
 	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
-	// import IconButton from 'material-ui/IconButton';
-	// import IconMenu from 'material-ui/IconMenu';
-
-	// import MenuItem from 'material-ui/MenuItem';
-	// import Divider from 'material-ui/Divider';
-	// import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-	// import { Link } from 'react-router';
 
 	var _react = __webpack_require__(0);
 
@@ -1830,9 +1951,94 @@
 
 	var _Drawer2 = _interopRequireDefault(_Drawer);
 
-	var _FlatButton = __webpack_require__(21);
+	var _FlatButton = __webpack_require__(20);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _reactRouter = __webpack_require__(4);
+
+	var _animate = {
+	  "animated": "_3r0mq9S7Wc2cm68zTdSanO",
+	  "infinite": "_39g1891yxx_Ju5xjjy1jzn",
+	  "hinge": "_2FeOisFrfOoF3CPqiRPwDs",
+	  "flipOutX": "GRvy3Rtqk_p1WA4ISw17X",
+	  "flipOutY": "_3sHrEPcTQ8wy_g_7xhYUaq",
+	  "bounceIn": "FNqy24qpvuWyN324h1jQt",
+	  "bounceOut": "M4TLNKZvAt6Euon8OTBSg",
+	  "bounce": "_2R-8W-5pB4ZGcRYTEm0eUz",
+	  "flash": "_2bxipBCixhcu4JWkIbUnAl",
+	  "pulse": "_18k3lDKsSFZyKWzbSDzOZ0",
+	  "rubberBand": "VifMYJ2Dm9nu8CYeXZN_O",
+	  "shake": "v9onn00ZAX0JyFxDMtoOa",
+	  "headShake": "gJo1FSJp10TL_AP_mhaJX",
+	  "swing": "_3HkZbNny1NUWD0tT9HJlNQ",
+	  "tada": "pCGrTRmQAMKrWrG5tBXG_",
+	  "wobble": "_3XR4NjvZjuLZfqM1S0PgOm",
+	  "jello": "_22pDETzONWsYfkyibrHBUr",
+	  "bounceInDown": "_1BtMguP7zLzQ7vus2Oz8oC",
+	  "bounceInLeft": "ChJ6Wvpi__wzp0IeczBT8",
+	  "bounceInRight": "_3NEBDIFhuM7UiBTt5T9cuB",
+	  "bounceInUp": "_1XNDgYlpOLWPmUbein5Svz",
+	  "bounceOutDown": "_7sCwUF6gRjuEGQbu8vZJT",
+	  "bounceOutLeft": "_2zWwbS3b5HSj5wvCjP0g_Z",
+	  "bounceOutRight": "_3ItUJv3aRNqZjnCDSQfooL",
+	  "bounceOutUp": "_1TbBPhQCK_Tj3eRb5HRg0V",
+	  "fadeIn": "_1dfHUeEigqZKaz9VqhwCWb",
+	  "fadeInDown": "_3YjYpd53_FQTd6sY394muf",
+	  "fadeInDownBig": "_2oXogJH6ealdNM7hq8By5w",
+	  "fadeInLeft": "_37TO6w-qRdn360Q56rwMlF",
+	  "fadeInLeftBig": "_3k5qTpWazjJzryVgPMPZmY",
+	  "fadeInRight": "_2G3Ryc3I1emKLro-w0mJLl",
+	  "fadeInRightBig": "gIzrJDqgjX8oX3QmEYxw3",
+	  "fadeInUp": "kWsa6kBxkGLypi4-mU6bU",
+	  "fadeInUpBig": "_1kN6Plon06A4RFVocStYAP",
+	  "fadeOut": "_12yNe2uIRjfF-wFv3Ps6fZ",
+	  "fadeOutDown": "_3lMvLY2YA_OtJvvcJROZDl",
+	  "fadeOutDownBig": "_33uAMEQeeC060Xw8FFwi8i",
+	  "fadeOutLeft": "_1DOKHBu6380bnIsgmYH7pQ",
+	  "fadeOutLeftBig": "_1-Irat2opOfE8VFQKtByBa",
+	  "fadeOutRight": "_2AprXBXBi-bRJOrIeRn4zY",
+	  "fadeOutRightBig": "_1KUEmm84HNN9F7B6YxKLYC",
+	  "fadeOutUp": "_1AdjSRFCKFYF-uEHcrqY_-",
+	  "fadeOutUpBig": "_1fvHvkROMAciZl08yk151f",
+	  "flip": "SZnDis1iCYaZX2iAka0AD",
+	  "flipInX": "_3KaCi8BFXWJedh5kv8NPHs",
+	  "flipInY": "_2bbm1f20KPAO-NOHFoSMkV",
+	  "lightSpeedIn": "_3UZT4yJVHiFSzESjY_vkW3",
+	  "lightSpeedOut": "_2Vz9L__gi00kBa_U9jsKbH",
+	  "rotateIn": "eh61XgjfkBJXam5A1nbyv",
+	  "rotateInDownLeft": "jW4C5DaKtsrF7iIlt77Hl",
+	  "rotateInDownRight": "dzPOAmrkxK4kqf1Qi3YED",
+	  "rotateInUpLeft": "f6AuH8cii2M9M4o_puCoV",
+	  "rotateInUpRight": "_97N163Rl8VAJp-g0y9uAB",
+	  "rotateOut": "_28YRzI46SAC67e2w1kqIHy",
+	  "rotateOutDownLeft": "_3F-rBkOPeY6peSGn0KaHi6",
+	  "rotateOutDownRight": "_3QaeUebvm_hDmM8XyKDx-c",
+	  "rotateOutUpLeft": "_3OdjVJLA4C4r6OJLu54tPK",
+	  "rotateOutUpRight": "_3wZ8YsrBU1ssIYWNrTWdop",
+	  "rollIn": "JZMlyQJfPBvaAOEQ0_lqO",
+	  "rollOut": "Ei5yJnm7U8ou7wxwwh465",
+	  "zoomIn": "_31TiMTHefHKQyNtpgnxdJG",
+	  "zoomInDown": "_3Dkl1rEapNChrq-5-Q621T",
+	  "zoomInLeft": "_2gfS98LQ8P5YfRyu05o9Jp",
+	  "zoomInRight": "_3BmL4vMvU9kIIjnORZ_3S_",
+	  "zoomInUp": "_1aUktT-M7KaBb6KTk_Fi60",
+	  "zoomOut": "l87T1ZcL5PJsHt5IgKobT",
+	  "zoomOutDown": "_11KSanMj6lgSXviEP1jsgJ",
+	  "zoomOutLeft": "_14_r8yqvj0XJL2br0Iv1HJ",
+	  "zoomOutRight": "H3PkUBeHMjR9HK8LwfcmS",
+	  "zoomOutUp": "_7HIP_dYIaROGx5nSoGFF2",
+	  "slideInDown": "_2-kwH364DBmQfpvHTbOqCb",
+	  "slideInLeft": "_1iptQXrynUtTrun5cECksu",
+	  "slideInRight": "_1-YHRccTFOZm-V46e15nr3",
+	  "slideInUp": "_1ToTZgcjGMaYpiWaVlOjyq",
+	  "slideOutDown": "_29G91APzNGaUj-_McqEA0u",
+	  "slideOutLeft": "_2qHPXO_uFCk50SG5DEmn7a",
+	  "slideOutRight": "_2gxm9oRHDlm5mjqhTdsk15",
+	  "slideOutUp": "_3VEaDz-Iae1m_S61Co6RE6"
+	};
+
+	var _animate2 = _interopRequireDefault(_animate);
 
 	var _Navigation = {
 	  "menu": "_2cVhCv7k3sEK6iuvmIjho4"
@@ -1842,34 +2048,43 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var buttonStyle = { transform: 'rotate(-90deg)', transformOrigin: '0% 0%', margin: '40px', paddingLeft: '0' };
-
-	var _ref = _jsx(_FlatButton2.default, {
-	  style: buttonStyle,
-	  label: 'Home',
-	  labelPosition: 'before'
+	var _ref = _jsx(_reactRouter.Link, {
+	  to: '/portfolio'
 	});
 
-	var _ref2 = _jsx(_FlatButton2.default, {
-	  style: buttonStyle,
-	  label: 'Me',
-	  labelPosition: 'before'
+	var _ref2 = _jsx(_reactRouter.Link, {
+	  to: '/me'
 	});
 
-	var _ref3 = _jsx(_FlatButton2.default, {
-	  style: buttonStyle,
-	  label: 'Porfolio',
-	  labelPosition: 'before'
+	var _ref3 = _jsx(_reactRouter.Link, {
+	  to: '/'
 	});
 
 	var Navigation = function Navigation(props) {
+	  var linkedLables = {
+	    Portfolio: _ref,
+	    Me: _ref2,
+	    Home: _ref3
+	  };
 	  return _jsx('div', {}, void 0, _jsx(_Drawer2.default, {
 	    containerStyle: { WebkitTransition: 'width 1s' },
 	    open: props.open,
 	    width: props.width
-	  }, void 0, _jsx('div', {
+	  }, void 0, _jsx('nav', {
 	    className: _Navigation2.default.menu
-	  }, void 0, _ref, _ref2, _ref3)));
+	  }, void 0, Object.keys(linkedLables).map(function (linkedLable, i) {
+	    return _jsx('div', {
+	      className: _animate2.default.animated + ' ' + _animate2.default.fadeInRight,
+	      style: {
+	        WebkitAnimationDelay: i + 1.5 + 's',
+	        WebkitAnimationDuration: '1s'
+	      }
+	    }, void 0, _jsx(_FlatButton2.default, {
+	      containerElement: linkedLables[linkedLable],
+	      label: linkedLable,
+	      labelPosition: 'before'
+	    }, linkedLable));
+	  }))));
 	};
 
 	exports.default = Navigation;
@@ -1879,27 +2094,16 @@
 /***/ function(module, exports) {
 
 	"use strict";
-	// Export Constants
-
-	// Export Actions
 	"use strict";
-
-/***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	__webpack_require__(49);
+	// Import Actions
+	// import {  } from './PortfolioActions';
 
 	// Initial State
-	var initialState = {}; // Import Actions
-
+	var initialState = {};
 
 	var PortfolioReducer = function PortfolioReducer() {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -1914,7 +2118,7 @@
 	exports.default = PortfolioReducer;
 
 /***/ },
-/* 51 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1930,7 +2134,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _PortfolioItem = __webpack_require__(52);
+	var _PortfolioItem = __webpack_require__(51);
 
 	var _PortfolioItem2 = _interopRequireDefault(_PortfolioItem);
 
@@ -2197,7 +2401,7 @@
 	exports.default = PortfolioGallery;
 
 /***/ },
-/* 52 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2215,7 +2419,7 @@
 
 	var _Card = __webpack_require__(65);
 
-	var _FlatButton = __webpack_require__(21);
+	var _FlatButton = __webpack_require__(20);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -2252,6 +2456,135 @@
 	exports.default = PortfolioItem;
 
 /***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
+
+	var _react = __webpack_require__(0);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PortfolioVideo = {
+	  "video-container": "_1XSl-EwztuUwLkoUTJfyiJ"
+	};
+
+	var _PortfolioVideo2 = _interopRequireDefault(_PortfolioVideo);
+
+	var _animate = {
+	  "animated": "_3r0mq9S7Wc2cm68zTdSanO",
+	  "infinite": "_39g1891yxx_Ju5xjjy1jzn",
+	  "hinge": "_2FeOisFrfOoF3CPqiRPwDs",
+	  "flipOutX": "GRvy3Rtqk_p1WA4ISw17X",
+	  "flipOutY": "_3sHrEPcTQ8wy_g_7xhYUaq",
+	  "bounceIn": "FNqy24qpvuWyN324h1jQt",
+	  "bounceOut": "M4TLNKZvAt6Euon8OTBSg",
+	  "bounce": "_2R-8W-5pB4ZGcRYTEm0eUz",
+	  "flash": "_2bxipBCixhcu4JWkIbUnAl",
+	  "pulse": "_18k3lDKsSFZyKWzbSDzOZ0",
+	  "rubberBand": "VifMYJ2Dm9nu8CYeXZN_O",
+	  "shake": "v9onn00ZAX0JyFxDMtoOa",
+	  "headShake": "gJo1FSJp10TL_AP_mhaJX",
+	  "swing": "_3HkZbNny1NUWD0tT9HJlNQ",
+	  "tada": "pCGrTRmQAMKrWrG5tBXG_",
+	  "wobble": "_3XR4NjvZjuLZfqM1S0PgOm",
+	  "jello": "_22pDETzONWsYfkyibrHBUr",
+	  "bounceInDown": "_1BtMguP7zLzQ7vus2Oz8oC",
+	  "bounceInLeft": "ChJ6Wvpi__wzp0IeczBT8",
+	  "bounceInRight": "_3NEBDIFhuM7UiBTt5T9cuB",
+	  "bounceInUp": "_1XNDgYlpOLWPmUbein5Svz",
+	  "bounceOutDown": "_7sCwUF6gRjuEGQbu8vZJT",
+	  "bounceOutLeft": "_2zWwbS3b5HSj5wvCjP0g_Z",
+	  "bounceOutRight": "_3ItUJv3aRNqZjnCDSQfooL",
+	  "bounceOutUp": "_1TbBPhQCK_Tj3eRb5HRg0V",
+	  "fadeIn": "_1dfHUeEigqZKaz9VqhwCWb",
+	  "fadeInDown": "_3YjYpd53_FQTd6sY394muf",
+	  "fadeInDownBig": "_2oXogJH6ealdNM7hq8By5w",
+	  "fadeInLeft": "_37TO6w-qRdn360Q56rwMlF",
+	  "fadeInLeftBig": "_3k5qTpWazjJzryVgPMPZmY",
+	  "fadeInRight": "_2G3Ryc3I1emKLro-w0mJLl",
+	  "fadeInRightBig": "gIzrJDqgjX8oX3QmEYxw3",
+	  "fadeInUp": "kWsa6kBxkGLypi4-mU6bU",
+	  "fadeInUpBig": "_1kN6Plon06A4RFVocStYAP",
+	  "fadeOut": "_12yNe2uIRjfF-wFv3Ps6fZ",
+	  "fadeOutDown": "_3lMvLY2YA_OtJvvcJROZDl",
+	  "fadeOutDownBig": "_33uAMEQeeC060Xw8FFwi8i",
+	  "fadeOutLeft": "_1DOKHBu6380bnIsgmYH7pQ",
+	  "fadeOutLeftBig": "_1-Irat2opOfE8VFQKtByBa",
+	  "fadeOutRight": "_2AprXBXBi-bRJOrIeRn4zY",
+	  "fadeOutRightBig": "_1KUEmm84HNN9F7B6YxKLYC",
+	  "fadeOutUp": "_1AdjSRFCKFYF-uEHcrqY_-",
+	  "fadeOutUpBig": "_1fvHvkROMAciZl08yk151f",
+	  "flip": "SZnDis1iCYaZX2iAka0AD",
+	  "flipInX": "_3KaCi8BFXWJedh5kv8NPHs",
+	  "flipInY": "_2bbm1f20KPAO-NOHFoSMkV",
+	  "lightSpeedIn": "_3UZT4yJVHiFSzESjY_vkW3",
+	  "lightSpeedOut": "_2Vz9L__gi00kBa_U9jsKbH",
+	  "rotateIn": "eh61XgjfkBJXam5A1nbyv",
+	  "rotateInDownLeft": "jW4C5DaKtsrF7iIlt77Hl",
+	  "rotateInDownRight": "dzPOAmrkxK4kqf1Qi3YED",
+	  "rotateInUpLeft": "f6AuH8cii2M9M4o_puCoV",
+	  "rotateInUpRight": "_97N163Rl8VAJp-g0y9uAB",
+	  "rotateOut": "_28YRzI46SAC67e2w1kqIHy",
+	  "rotateOutDownLeft": "_3F-rBkOPeY6peSGn0KaHi6",
+	  "rotateOutDownRight": "_3QaeUebvm_hDmM8XyKDx-c",
+	  "rotateOutUpLeft": "_3OdjVJLA4C4r6OJLu54tPK",
+	  "rotateOutUpRight": "_3wZ8YsrBU1ssIYWNrTWdop",
+	  "rollIn": "JZMlyQJfPBvaAOEQ0_lqO",
+	  "rollOut": "Ei5yJnm7U8ou7wxwwh465",
+	  "zoomIn": "_31TiMTHefHKQyNtpgnxdJG",
+	  "zoomInDown": "_3Dkl1rEapNChrq-5-Q621T",
+	  "zoomInLeft": "_2gfS98LQ8P5YfRyu05o9Jp",
+	  "zoomInRight": "_3BmL4vMvU9kIIjnORZ_3S_",
+	  "zoomInUp": "_1aUktT-M7KaBb6KTk_Fi60",
+	  "zoomOut": "l87T1ZcL5PJsHt5IgKobT",
+	  "zoomOutDown": "_11KSanMj6lgSXviEP1jsgJ",
+	  "zoomOutLeft": "_14_r8yqvj0XJL2br0Iv1HJ",
+	  "zoomOutRight": "H3PkUBeHMjR9HK8LwfcmS",
+	  "zoomOutUp": "_7HIP_dYIaROGx5nSoGFF2",
+	  "slideInDown": "_2-kwH364DBmQfpvHTbOqCb",
+	  "slideInLeft": "_1iptQXrynUtTrun5cECksu",
+	  "slideInRight": "_1-YHRccTFOZm-V46e15nr3",
+	  "slideInUp": "_1ToTZgcjGMaYpiWaVlOjyq",
+	  "slideOutDown": "_29G91APzNGaUj-_McqEA0u",
+	  "slideOutLeft": "_2qHPXO_uFCk50SG5DEmn7a",
+	  "slideOutRight": "_2gxm9oRHDlm5mjqhTdsk15",
+	  "slideOutUp": "_3VEaDz-Iae1m_S61Co6RE6"
+	};
+
+	var _animate2 = _interopRequireDefault(_animate);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PortfolioVideo = function PortfolioVideo(props) {
+	  return _jsx('video', {
+	    preload: true,
+	    playsInline: true,
+	    autoPlay: true,
+	    muted: true,
+	    loop: true,
+	    className: _PortfolioVideo2.default['video-container'] + ' ' + _animate2.default.fadeIn,
+	    style: {
+	      marginLeft: '' + props.marginLeft,
+	      WebkitTransition: 'margin-left 1s',
+	      WebkitAnimationDuration: '5s'
+	    }
+	  }, void 0, _jsx('source', {
+	    src: props.srcPath,
+	    type: 'video/mp4'
+	  }));
+	};
+
+	exports.default = PortfolioVideo;
+
+/***/ },
 /* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2262,17 +2595,17 @@
 	  value: true
 	});
 
-	var _redux = __webpack_require__(4);
+	var _redux = __webpack_require__(23);
 
 	var _AppReducer = __webpack_require__(47);
 
 	var _AppReducer2 = _interopRequireDefault(_AppReducer);
 
-	var _AnalyzedReducer = __webpack_require__(14);
+	var _AnalyzedReducer = __webpack_require__(13);
 
 	var _AnalyzedReducer2 = _interopRequireDefault(_AnalyzedReducer);
 
-	var _PortfolioReducer = __webpack_require__(50);
+	var _PortfolioReducer = __webpack_require__(49);
 
 	var _PortfolioReducer2 = _interopRequireDefault(_PortfolioReducer);
 
@@ -2431,7 +2764,7 @@
 	exports.getPost = getPost;
 	exports.deletePost = deletePost;
 
-	var _post = __webpack_require__(18);
+	var _post = __webpack_require__(17);
 
 	var _post2 = _interopRequireDefault(_post);
 
@@ -2561,7 +2894,7 @@
 
 	var _path2 = _interopRequireDefault(_path);
 
-	var _webpack = __webpack_require__(11);
+	var _webpack = __webpack_require__(10);
 
 	var _webpack2 = _interopRequireDefault(_webpack);
 
@@ -2587,7 +2920,7 @@
 
 	var _server = __webpack_require__(35);
 
-	var _reactRouter = __webpack_require__(10);
+	var _reactRouter = __webpack_require__(4);
 
 	var _reactHelmet = __webpack_require__(9);
 
@@ -2753,7 +3086,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _lodash = __webpack_require__(19);
+	var _lodash = __webpack_require__(18);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -2966,7 +3299,7 @@
 
 	var _twit2 = _interopRequireDefault(_twit);
 
-	var _lodash = __webpack_require__(19);
+	var _lodash = __webpack_require__(18);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 

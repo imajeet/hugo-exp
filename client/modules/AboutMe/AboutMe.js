@@ -1,6 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { Component } from 'react';
 
 import fbGrid from 'assets/flexboxgrid.css';
 
@@ -48,9 +46,9 @@ class AboutMe extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {};
-};
+// const mapStateToProps = (state) => {
+//   return {};
+// };
 
 AboutMe.propTypes = {
 };

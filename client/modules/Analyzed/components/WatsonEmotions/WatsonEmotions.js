@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import * as Recharts from 'recharts';
+
 const { Cell, ResponsiveContainer, Line, Bar, ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend } = Recharts;
 
 // const WatsonEmotions = (props) => {

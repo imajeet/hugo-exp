@@ -1,9 +1,5 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-
+import React from 'react';
 import PortfolioGallery from './components/PortfolioGallery/PortfolioGallery';
-import PortfolioVideo from './components/PortfolioVideo/PortfolioVideo';
-import ferryVideo from './components/PortfolioVideo/ferry-ride.mp4';
 
 // Import Style
 // import styles from './Portfolio.css';
@@ -27,21 +23,15 @@ const data = [{
 },
 ];
 
-const Portfolio = (props) => {
+const Portfolio = () => {
   return (
     <div>
-      <div>
-        <PortfolioGallery data={data} />
-      </div>
+      <PortfolioGallery data={data} />
     </div>
   );
-};
-
-const mapStateToProps = (state) => {
-  return {};
 };
 
 Portfolio.propTypes = {
 };
 
-export default connect(mapStateToProps)(Portfolio);
+export default Portfolio;
