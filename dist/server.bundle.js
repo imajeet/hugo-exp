@@ -525,6 +525,7 @@
 
 	var _Home = {
 	  "home-container": "_2hUQ84X6DC3wV2SiOXHncQ",
+	  "home-header": "_3iEiXhDv_-efX400i27um2",
 	  "welcome-copy": "_3kooRbZxSFyDOkdn_mJPjg",
 	  "self-copy": "_1e6g9SSbSUjS-LMClxquCl",
 	  "item": "_2XOcjXfvYAq48mmfg5XUA0"
@@ -626,6 +627,8 @@
 	// Import Style
 
 
+	var _ref = _jsx('h1', {}, void 0, 'HugoExp');
+
 	var Home = function (_Component) {
 	  _inherits(Home, _Component);
 
@@ -654,6 +657,8 @@
 	      return _jsx('div', {
 	        className: '\n          ' + _Home2.default['home-container'] + '\n        '
 	      }, void 0, _jsx('div', {
+	        className: '' + _Home2.default['home-header']
+	      }, void 0, _ref), _jsx('div', {
 	        className: '' + _Home2.default['welcome-copy']
 	      }, void 0, _jsx('div', {
 	        className: '' + _Home2.default['self-copy']
@@ -734,9 +739,9 @@
 	  link: 'https://asurety.herokuapp.com/'
 	}];
 
-	var _ref = _jsx('div', {}, void 0, _jsx('div', {}, void 0, _jsx(_PortfolioGallery2.default, {
+	var _ref = _jsx('div', {}, void 0, _jsx(_PortfolioGallery2.default, {
 	  data: data
-	})));
+	}));
 
 	var Portfolio = function Portfolio() {
 	  return _ref;
