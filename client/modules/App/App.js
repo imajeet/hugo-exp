@@ -1,22 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
 // Import muiTheme
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { getMuiTheme } from 'material-ui/styles';
 import rawTheme from './AppTheme';
 
 // Import Style
-import styles from './App.css';
+import './App.css';
 
 // Import animate.css
+// import an from '../../assets/animate.css';
 
 // Import Components
 import DevTools from './components/DevTools';
 import Navigation from './components/Navigation/Navigation';
+// import RouteCSSTransitionGroup from '../../components/RouteCSSTransitionGroup/RouteCSSTransitionGroup';
 
 import PortfolioVideo from '../Portfolio/components/PortfolioVideo/PortfolioVideo';
 import ferryRide from '../Portfolio/components/PortfolioVideo/ferry-ride.mp4';
@@ -50,7 +50,6 @@ export class App extends Component {
     }
   }
 
-
   render() {
     const muiTheme = getMuiTheme(rawTheme, { userAgent: navigator ? navigator.userAgent : 'all' });
     return (
@@ -80,7 +79,7 @@ export class App extends Component {
             />
             <PortfolioVideo marginLeft={this.state.videoMarginLeft} srcPath={ferryRide} />
 
-            <div className={styles.container}>
+            <div>
               {this.props.children}
             </div>
           </div>

@@ -8,11 +8,15 @@ import an from '../../assets/animate.css';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      // headerAnimation: an.fadeInDown,
+    };
   }
 
   componentWillUnmount() {
-    console.log('WillUnmount');
+    // this.setState({
+    //   headerAnimation: an.fadeOut,
+    // });
   }
 
   render() {
@@ -22,13 +26,15 @@ class Home extends Component {
       Passionate: 'To continue learning is to keep the mind young; I advocate towards continous growth.',
     };
     return (
-      <div
-        className={`
-          ${styles['home-container']}
-        `}
-      >
-        <div className={`${styles['home-header']}`}>
-          <h1>HugoExp</h1>
+      <div className={`${styles['home-container']}`}>
+        <div
+          className={`${styles['home-header']} ${an.animated} ${an.fadeInDown}`}
+          style={{
+            WebkitAnimationDelay: '4s',
+            WebkitAnimationDuration: '1s',
+          }}
+        >
+          <h1>Hugo</h1>
         </div>
         <div className={`${styles['welcome-copy']}`}>
           <div className={`${styles['self-copy']}`}>
