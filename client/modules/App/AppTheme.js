@@ -4,7 +4,7 @@ import { spacing } from 'material-ui/styles';
 
 const rawBaseTheme = {
   ...spacing,
-  fontFamily: 'Roboto, sans-serif',
+  fontFamily: 'AvenirNext, sans-serif',
   palette: {
     primary1Color: '#0078C5',
     primary2Color: '#0066FF',
