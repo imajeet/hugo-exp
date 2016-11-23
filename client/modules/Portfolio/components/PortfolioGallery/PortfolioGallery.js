@@ -17,7 +17,7 @@ const PortfolioGallery = (props) => {
                   ${an.fadeInRight}
                 `}
                 style={{
-                  WebkitAnimationDuration: '2s',
+                  WebkitAnimationDuration: '1s',
                   WebkitAnimationDelay: `${i + 1}s`,
                 }}
               >

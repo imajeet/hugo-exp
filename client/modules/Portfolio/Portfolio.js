@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import PortfolioGallery from './components/PortfolioGallery/PortfolioGallery';
 
-// Import Style
-// import styles from './Portfolio.css';
+import { getLeaveAnimation } from './PortfolioReducer';
 
 import cyronPageImage from './assets/cyron.png';
 import pbsPageImage from './assets/pbs.png';
 import asuretyPageImage from './assets/asurety.png';
+
+import an from '../../assets/animate.css';
 
 const data = [{
   cardImagePath: cyronPageImage,
@@ -23,15 +25,22 @@ const data = [{
 },
 ];
 
-const Portfolio = () => {
+const Portfolio = ({ leaveAnimation }) => {
   return (
-    <div>
+    <div className={`${an.animated} ${leaveAnimation}`}>
       <PortfolioGallery data={data} />
     </div>
   );
 };
 
 Portfolio.propTypes = {
+  leaveAnimation: PropTypes.string.isRequired,
 };
 
-export default Portfolio;
+function mapStateToProps(state) {
+  return {
+    leaveAnimation: getLeaveAnimation(state),
+  };
+}
+
+export default connect(mapStateToProps)(Portfolio);

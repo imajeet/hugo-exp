@@ -1,14 +1,22 @@
 // Import Actions
-// import {  } from './PortfolioActions';
+import { SET_LEAVE_ANIMATION } from './PortfolioActions';
 
 // Initial State
-const initialState = {};
+const initialState = {
+  animation: '',
+};
 
-const PortfolioReducer = (state = initialState, action) => {
+const HomeReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_LEAVE_ANIMATION:
+      return Object.assign({}, state, {
+        animation: action.animation,
+      });
     default:
       return state;
   }
 };
 
-export default PortfolioReducer;
+export const getLeaveAnimation = state => state.portfolio.animation;
+
+export default HomeReducer;
