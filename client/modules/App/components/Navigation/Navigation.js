@@ -10,9 +10,16 @@ import { setLeaveAnimation as setHomeLeaveAnimation } from '../../../Home/HomeAc
 import { setLeaveAnimation as setPortfolioLeaveAnimation } from '../../../Portfolio/PortfolioActions';
 import { setLeaveAnimation as setAboutMeLeaveAnimation } from '../../../AboutMe/AboutMeActions';
 
+const muiStyle = {
+  drawerContainer: { WebkitTransition: 'width 1s', overflow: 'hidden' },
+  hoverColor: 'rgba(99.2%, 84.7%, 20.8%, 0.2)',
+  ripple: 'rgba(100%, 100%, 0%, 1.0)',
+  fontDecor: { fontFamily: 'AvenirNext', fontSize: '14px', letterSpacing: '2px' },
+};
+
 const Navigation = (props) => {
   const leaveAnimation = `${an.fadeOut}`;
-  const handler = (route, setLeaveAnimationAction, animation) => {
+  const routeHandler = (route, setLeaveAnimationAction, animation) => {
     if (window.location.pathname !== route) {
       // fadeOut this route
       props.dispatch(setLeaveAnimationAction(animation));
@@ -27,15 +34,15 @@ const Navigation = (props) => {
   const mapAnimationToRouteHandler = (route) => {
     switch (route) {
       case '/': {
-        handler(route, setHomeLeaveAnimation, leaveAnimation);
+        routeHandler(route, setHomeLeaveAnimation, leaveAnimation);
       }
         break;
       case '/me': {
-        handler(route, setAboutMeLeaveAnimation, leaveAnimation);
+        routeHandler(route, setAboutMeLeaveAnimation, leaveAnimation);
       }
         break;
       case '/portfolio': {
-        handler(route, setPortfolioLeaveAnimation, leaveAnimation);
+        routeHandler(route, setPortfolioLeaveAnimation, leaveAnimation);
       }
         break;
       default:
@@ -44,15 +51,15 @@ const Navigation = (props) => {
   };
 
   const mapLablesToHandlers = {
-    Me: { handler: () => mapAnimationToRouteHandler('/me') },
-    Home: { handler: () => mapAnimationToRouteHandler('/') },
-    Portfolio: { handler: () => mapAnimationToRouteHandler('/portfolio') },
+    Portfolio: { routeHandler: () => mapAnimationToRouteHandler('/portfolio') },
+    Me: { routeHandler: () => mapAnimationToRouteHandler('/me') },
+    Home: { routeHandler: () => mapAnimationToRouteHandler('/') },
   };
 
   return (
     <div>
       <Drawer
-        containerStyle={{ WebkitTransition: 'width 1s' }}
+        containerStyle={muiStyle.drawerContainer}
         open={props.open}
         width={props.width}
       >
@@ -63,14 +70,18 @@ const Navigation = (props) => {
                 key={mappedLabel}
                 className={`${an.animated} ${an.fadeInRight}`}
                 style={{
-                  WebkitAnimationDelay: `${i + 0.5}s`,
+                  WebkitAnimationDelay: `${i}s`,
                   WebkitAnimationDuration: '1s',
                 }}
               >
                 <FlatButton
-                  onTouchTap={mapLablesToHandlers[mappedLabel].handler}
+                  primary
+                  style={muiStyle.fontDecor}
+                  onTouchTap={mapLablesToHandlers[mappedLabel].routeHandler}
                   label={mappedLabel}
                   labelPosition="before"
+                  hoverColor={muiStyle.hoverColor}
+                  rippleColor={muiStyle.ripple}
                 />
               </div>
             )

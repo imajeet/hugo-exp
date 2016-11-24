@@ -14,7 +14,7 @@ const Home = ({ leaveAnimation }) => {
   };
 
   return (
-    <div className={`${styles['home-container']} ${an.animated} ${leaveAnimation}`}>
+    <div className={`${styles['home-container']} ${an.animated} ${leaveAnimation} ${styles['font-decor']}`}>
       <div
         className={`${styles['home-header']} ${an.animated} ${an.fadeInDown}`}
         style={{

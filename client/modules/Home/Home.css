@@ -1,5 +1,11 @@
 /* Home styles */
 
+.font-decor {
+    font-family: AvenierNext;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
 .home-container {
     display: flex;
     width: 100vw;
@@ -42,13 +48,11 @@
 .item h3 {
     text-transform: uppercase;
     font-size: 12px;
-    font-weight: 800;
-    font-family: AvenirNext;
     line-height: 0;
     letter-spacing: 2px;
 }
 
 .item p {
-    font-size: 10px;
     line-height: 14px;
+    font-weight: 500;
 }

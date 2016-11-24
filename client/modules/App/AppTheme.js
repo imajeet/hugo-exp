@@ -6,7 +6,7 @@ const rawBaseTheme = {
   ...spacing,
   fontFamily: 'AvenirNext, sans-serif',
   palette: {
-    primary1Color: '#0078C5',
+    primary1Color: '#767679',
     primary2Color: '#0066FF',
     primary3Color: Colors.lightBlack,
     accent1Color: Colors.pinkA200,
