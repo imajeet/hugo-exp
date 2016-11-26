@@ -1,10 +1,28 @@
-/* AboutMe styles */
 .about-me-container {
-  display: flex;
-  flex-wrap: wrap;
+    font-family: AvenirNext;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
 }
-.about-me-copy {
-  font-size: 2vmin;
-  color: #fff;
-  text-align: justify;
+
+.about-me-container .text p {
+    text-align: justify;
+    font-size: 12px;
+    color: #464647;
+    margin-bottom: 40px;
+    line-height: 22px;
+    letter-spacing: 1px;
+}
+
+.about-me-container .text {
+    max-width: 400px;
+    float: right;
+    margin: 0 70px 0 0;
+    width: 45%;
+    box-sizing: border-box;
 }

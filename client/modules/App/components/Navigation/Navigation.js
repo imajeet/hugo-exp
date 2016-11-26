@@ -70,7 +70,7 @@ const Navigation = (props) => {
                 key={mappedLabel}
                 className={`${an.animated} ${an.fadeInRight}`}
                 style={{
-                  WebkitAnimationDelay: `${i}s`,
+                  WebkitAnimationDelay: `${i + 1}s`,
                   WebkitAnimationDuration: '1s',
                 }}
               >
