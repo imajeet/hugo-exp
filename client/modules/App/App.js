@@ -16,16 +16,13 @@ import './App.css';
 // Import Components
 import DevTools from './components/DevTools';
 import Navigation from './components/Navigation/Navigation';
-// import RouteCSSTransitionGroup from '../../components/RouteCSSTransitionGroup/RouteCSSTransitionGroup';
 
 import PortfolioVideo from '../Portfolio/components/PortfolioVideo/PortfolioVideo';
 import ferryRide from '../Portfolio/components/PortfolioVideo/ferry-ride.mp4';
 
-
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
-
 
 export class App extends Component {
   constructor(props) {
@@ -40,13 +37,20 @@ export class App extends Component {
 
   componentDidMount() {
     this.setState({ isMounted: true }); // eslint-disable-line
-    if (window.innerWidth >= 900) {
+    if (window.innerWidth > 600) {
       window.setTimeout(() => {
         this.setState({
           drawerWidth: 86,
           videoMarginLeft: '86px',
         });
       }, 1000);
+    } else {
+      window.setTimeout(() => {
+        this.setState({
+          drawerOpen: false,
+          videoMarginLeft: '0px',
+        });
+      });
     }
   }
 
@@ -88,7 +92,6 @@ export class App extends Component {
     );
   }
 }
-
 
 // Retrieve data from store as props
 function mapStateToProps(store) {

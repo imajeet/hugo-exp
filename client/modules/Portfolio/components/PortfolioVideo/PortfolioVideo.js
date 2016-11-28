@@ -2,16 +2,15 @@ import React, { PropTypes } from 'react';
 
 import styles from './PortfolioVideo.css';
 
-import an from '../../../../assets/animate.css';
-
 const PortfolioVideo = (props) => {
   return (
     <video
       preload playsInline autoPlay muted loop
-      className={`${styles['video-container']} ${an.fadeIn}`}
+      className={`${styles['video-container']}`}
       style={{
         marginLeft: `${props.marginLeft}`,
         WebkitTransition: 'margin-left 1s',
+        WebKitAnimationDelay: '5s',
         WebkitAnimationDuration: '5s',
       }}
     >

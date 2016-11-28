@@ -8,15 +8,30 @@
     width: 50%;
     height: 100vh;
     background-color: white;
+    overflow-y: scroll;
+}
+
+.about-me-container .text h2 {
+    text-align: justify;
+    font-size: 20px;
+    color: #464647;
+    margin-bottom: 40px;
+    line-height: 22px;
+    letter-spacing: 5px;
 }
 
 .about-me-container .text p {
     text-align: justify;
-    font-size: 12px;
+    font-size: 14px;
     color: #464647;
     margin-bottom: 40px;
     line-height: 22px;
     letter-spacing: 1px;
+}
+
+.about-me-container .text p span {
+  font-size: 40px;
+  color: darkgoldenrod;
 }
 
 .about-me-container .text {

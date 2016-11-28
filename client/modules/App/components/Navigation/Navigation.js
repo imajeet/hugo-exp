@@ -18,7 +18,6 @@ const muiStyle = {
 };
 
 const Navigation = (props) => {
-  const leaveAnimation = `${an.fadeOut}`;
   const routeHandler = (route, setLeaveAnimationAction, animation) => {
     if (window.location.pathname !== route) {
       // fadeOut this route
@@ -27,22 +26,22 @@ const Navigation = (props) => {
         // reset animations
         props.dispatch(setLeaveAnimationAction(''));
         props.router.push(route);
-      }, 800);
+      }, 1000);
     }
   };
 
   const mapAnimationToRouteHandler = (route) => {
     switch (route) {
       case '/': {
-        routeHandler(route, setHomeLeaveAnimation, leaveAnimation);
+        routeHandler(route, setHomeLeaveAnimation, `${an.fadeOutLeft}`);
       }
         break;
       case '/me': {
-        routeHandler(route, setAboutMeLeaveAnimation, leaveAnimation);
+        routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOut}`);
       }
         break;
       case '/portfolio': {
-        routeHandler(route, setPortfolioLeaveAnimation, leaveAnimation);
+        routeHandler(route, setPortfolioLeaveAnimation, `${an.fadeOutLeft}`);
       }
         break;
       default:

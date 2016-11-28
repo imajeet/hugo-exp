@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { getLeaveAnimation } from './AboutMeReducer';
 
-// import fbGrid from 'assets/flexboxgrid.css';
+import an from '../../assets/animate.css';
 
 import style from './AboutMe.css';
 
-const AboutMe = () => {
+const AboutMe = ({ leaveAnimation }) => {
   return (
-    <div className={style['about-me-container']}>
+    <div className={`${style['about-me-container']} ${an.animated} ${an.fadeInLeft} ${leaveAnimation}`}>
       <div className={style.text}>
+        <h2>About Me</h2>
         <p>
-          I am currently a contracted Software Engineer at a telecommunication startup, CallPal, where we’ve created an Application that allows users to call any where for free, mobile-to-mobile, or mobile-to-landline.
+          <span>I</span> am currently a contracted Software Engineer at a telecommunication startup, CallPal, where we’ve created an Application that allows users to call any where for free, mobile-to-mobile, or mobile-to-landline.
           </p>
 
         <p>
@@ -26,16 +29,15 @@ const AboutMe = () => {
   );
 };
 
-// const mapStateToProps = (state) => {
-//   return {};
-// };
 
 AboutMe.propTypes = {
+  leaveAnimation: PropTypes.string.isRequired,
 };
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(AboutMe);
+const mapStateToProps = (state) => {
+  return {
+    leaveAnimation: getLeaveAnimation(state),
+  };
+};
 
-export default AboutMe;
+export default connect(mapStateToProps)(AboutMe);
