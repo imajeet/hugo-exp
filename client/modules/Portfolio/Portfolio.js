@@ -7,6 +7,7 @@ import { getLeaveAnimation } from './PortfolioReducer';
 import cyronPageImage from './assets/cyron.png';
 import pbsPageImage from './assets/pbs.png';
 import asuretyPageImage from './assets/asurety.png';
+import hugoExpImage from './assets/hugo-exp.png';
 
 import an from '../../assets/animate.css';
 
@@ -22,6 +23,10 @@ const data = [{
   cardImagePath: asuretyPageImage,
   title: 'Asurety',
   link: 'https://asurety.herokuapp.com/',
+}, {
+  cardImagePath: hugoExpImage,
+  title: 'HugoExp',
+  link: 'https://hugo-exp.herokuapp.com/',
 },
 ];
 
