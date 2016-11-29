@@ -30,7 +30,7 @@ export class App extends Component {
     this.state = {
       isMounted: false,
       drawerOpen: true,
-      drawerWidth: 1,
+      drawerWidth: 0.1,
       videoMarginLeft: '0px',
     };
   }
@@ -50,8 +50,28 @@ export class App extends Component {
           drawerOpen: false,
           videoMarginLeft: '0px',
         });
-      });
+      }, 1000);
     }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 600) {
+        this.setState({
+          drawerOpen: true,
+          drawerWidth: 86,
+          videoMarginLeft: '86px',
+        });
+      } else {
+        this.setState({
+          drawerOpen: false,
+          drawerWidth: 0.1,
+          videoMarginLeft: '0px',
+        });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize');
   }
 
   render() {

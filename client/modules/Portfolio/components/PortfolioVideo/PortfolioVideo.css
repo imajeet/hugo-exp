@@ -8,8 +8,8 @@
   z-index: -1;
 }
 
-/*@media(min-width: 414px) and (max-width: 768px) {
-  .video {
-    transform: translateX(-28%);
-  }
-} */
+@media only screen and (max-width: 600px) {
+    .video-container {
+        transform: translate(-30%, 0%);
+    }
+}
