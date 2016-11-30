@@ -2381,7 +2381,7 @@
 	  }, void 0, _jsx('nav', {
 	    className: _Navigation2.default.menu
 	  }, void 0, createDrawerMenu())) : _jsx(_AppBar2.default, {
-	    className: ' ' + _Navigation2.default.appbar + ' ' + _animate2.default.animated + ' ' + _animate2.default.flipInX,
+	    className: ' ' + _Navigation2.default.appbar + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInDown,
 	    title: 'HugoExp',
 	    titleStyle: muiStyle.appBarTitle,
 	    iconElementLeft: _jsx(_IconMenu2.default, {

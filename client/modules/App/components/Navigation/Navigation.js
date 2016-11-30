@@ -118,7 +118,7 @@ const Navigation = (props) => {
           </Drawer>
           :
           <AppBar
-            className={` ${style.appbar} ${an.animated} ${an.flipInX}`}
+            className={` ${style.appbar} ${an.animated} ${an.fadeInDown}`}
             title="HugoExp"
             titleStyle={muiStyle.appBarTitle}
             iconElementLeft={
