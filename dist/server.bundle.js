@@ -602,6 +602,8 @@
 	  }, void 0, _jsx('div', {
 	    className: _Home2.default['home-header'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInDown,
 	    style: {
+	      AnimationDelay: '3.5s',
+	      AnimationDuration: '1s',
 	      WebkitAnimationDelay: '3.5s',
 	      WebkitAnimationDuration: '1s'
 	    }
@@ -614,7 +616,9 @@
 	      className: _Home2.default.item + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInLeft,
 	      style: {
 	        WebkitAnimationDelay: i + 0.5 + 's',
-	        WebkitAnimationDuration: '1s'
+	        WebkitAnimationDuration: '1s',
+	        AnimationDelay: i + 0.5 + 's',
+	        AnimationDuration: '1s'
 	      }
 	    }, detail, _jsx('h3', {}, void 0, detail), _jsx('p', {}, void 0, itemDetails[detail]));
 	  }))));
