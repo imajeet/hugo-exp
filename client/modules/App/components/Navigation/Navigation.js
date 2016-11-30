@@ -39,7 +39,7 @@ const Navigation = (props) => {
         // reset animations
         props.dispatch(setLeaveAnimationAction(''));
         props.router.push(route);
-      }, 1000);
+      }, 1100);
     }
   };
 

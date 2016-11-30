@@ -53,6 +53,7 @@
 }
 
 .item p {
+    text-shadow: 0px 0px 10px #000;
     line-height: 14px;
     font-weight: 800;
 }
