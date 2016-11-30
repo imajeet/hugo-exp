@@ -43,14 +43,12 @@ export class App extends Component {
           drawerWidth: 86,
           videoMarginLeft: '86px',
         });
-      }, 1000);
+      }, 4500);
     } else {
-      window.setTimeout(() => {
-        this.setState({
-          drawerOpen: false,
-          videoMarginLeft: '0px',
-        });
-      }, 1000);
+      this.setState({ // eslint-disable-line
+        drawerOpen: false,
+        videoMarginLeft: '0px',
+      });
     }
 
     window.addEventListener('resize', () => {
@@ -63,7 +61,6 @@ export class App extends Component {
       } else {
         this.setState({
           drawerOpen: false,
-          drawerWidth: 0.1,
           videoMarginLeft: '0px',
         });
       }

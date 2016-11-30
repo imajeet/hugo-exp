@@ -9,3 +9,7 @@
 .appbar {
     position: fixed;
 }
+
+.un-invis {
+    opacity: 1;
+}

@@ -18,7 +18,7 @@ const Home = ({ leaveAnimation }) => {
       <div
         className={`${styles['home-header']} ${an.animated} ${an.fadeInDown}`}
         style={{
-          WebkitAnimationDelay: '4s',
+          WebkitAnimationDelay: '3.5s',
           WebkitAnimationDuration: '1s',
         }}
       >
