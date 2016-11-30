@@ -2288,10 +2288,9 @@
 	    position: 'fixed',
 	    backgroundColor: '#fff',
 	    fontFamily: 'AvenirNext',
-	    WebkitAnimationDelay: '4s',
 	    WebkitAnimationDuration: '2s'
 	  },
-	  appBarTitle: { fontFamily: 'AvenirNext', color: '#000' },
+	  appBarTitle: { fontFamily: 'AvenirNext', color: '#000', textAlign: 'center' },
 	  icon: { border: 'solid 2px black' }
 	};
 
