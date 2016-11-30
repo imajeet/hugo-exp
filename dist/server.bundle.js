@@ -2266,7 +2266,8 @@
 	var _animate2 = _interopRequireDefault(_animate);
 
 	var _Navigation = {
-	  "menu": "_2cVhCv7k3sEK6iuvmIjho4"
+	  "menu": "_2cVhCv7k3sEK6iuvmIjho4",
+	  "appbar": "Unja-B3orbsH6LgZXuPmU"
 	};
 
 	var _Navigation2 = _interopRequireDefault(_Navigation);
@@ -2380,7 +2381,7 @@
 	  }, void 0, _jsx('nav', {
 	    className: _Navigation2.default.menu
 	  }, void 0, createDrawerMenu())) : _jsx(_AppBar2.default, {
-	    className: _animate2.default.animated + ' ' + _animate2.default.flipInX,
+	    className: ' ' + _Navigation2.default.appbar + ' ' + _animate2.default.animated + ' ' + _animate2.default.flipInX,
 	    title: 'HugoExp',
 	    titleStyle: muiStyle.appBarTitle,
 	    iconElementLeft: _jsx(_IconMenu2.default, {

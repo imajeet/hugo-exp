@@ -5,3 +5,7 @@
     height: 100vh;
     transform: rotate(270deg);
 }
+
+.appbar {
+    position: fixed;
+}
