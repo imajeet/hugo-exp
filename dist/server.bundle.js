@@ -1966,8 +1966,6 @@
 	// http://stackoverflow.com/a/34015469/988941
 	(0, _reactTapEventPlugin2.default)();
 
-	var _ref = _jsx(_DevTools2.default, {});
-
 	var App = exports.App = function (_Component) {
 	  _inherits(App, _Component);
 
@@ -2034,7 +2032,7 @@
 	      var muiTheme = (0, _styles.getMuiTheme)(_AppTheme2.default, { userAgent: navigator ? navigator.userAgent : 'all' });
 	      return _jsx(_MuiThemeProvider2.default, {
 	        muiTheme: muiTheme
-	      }, void 0, _jsx('div', {}, void 0, this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && _ref, _jsx('div', {}, void 0, _jsx(_reactHelmet2.default, {
+	      }, void 0, _jsx('div', {}, void 0, _jsx('div', {}, void 0, _jsx(_reactHelmet2.default, {
 	        title: 'Hugo Experience',
 	        titleTemplate: '%s',
 	        meta: [{ charset: 'utf-8' }, {
@@ -2667,7 +2665,7 @@
 	    className: _flexboxgrid2.default.row + ' ' + _flexboxgrid2.default.reverse
 	  }, void 0, props.data.map(function (datum, i) {
 	    return _jsx('div', {
-	      className: ' \n                  ' + _animate2.default.animated + '\n                  ' + _animate2.default.fadeInRight + '\n                ',
+	      className: ' \n                  ' + _animate2.default.animated + '\n                  ' + _animate2.default.fadeInDown + '\n                ',
 	      style: {
 	        WebkitAnimationDuration: '1s',
 	        WebkitAnimationDelay: i + 1 + 's'
@@ -2750,6 +2748,8 @@
 
 	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(0);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -2762,25 +2762,64 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var PortfolioVideo = function PortfolioVideo(props) {
-	  return _jsx('video', {
-	    preload: true,
-	    playsInline: true,
-	    autoPlay: true,
-	    muted: true,
-	    loop: true,
-	    className: '' + _PortfolioVideo2.default['video-container'],
-	    style: {
-	      marginLeft: '' + props.marginLeft,
-	      WebkitTransition: 'margin-left 1s',
-	      WebKitAnimationDelay: '5s',
-	      WebkitAnimationDuration: '5s'
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PortfolioVideo = function (_Component) {
+	  _inherits(PortfolioVideo, _Component);
+
+	  function PortfolioVideo(props) {
+	    _classCallCheck(this, PortfolioVideo);
+
+	    var _this = _possibleConstructorReturn(this, (PortfolioVideo.__proto__ || Object.getPrototypeOf(PortfolioVideo)).call(this, props));
+
+	    _this.state = {
+	      vidStyle: {}
+	    };
+	    return _this;
+	  }
+
+	  _createClass(PortfolioVideo, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      if (window.innerWidth > 600) {
+	        this.setState({ // eslint-disable-line
+	          vidStyle: {
+	            marginLeft: '' + this.props.marginLeft,
+	            WebkitTransition: 'margin-left 1s',
+	            WebKitAnimationDelay: '5s',
+	            WebkitAnimationDuration: '5s'
+	          }
+	        });
+	      } else {
+	        this.setState({ // eslint-disable-line
+	          vidStyle: { marginLeft: '0' }
+	        });
+	      }
 	    }
-	  }, void 0, _jsx('source', {
-	    src: props.srcPath,
-	    type: 'video/mp4'
-	  }));
-	};
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _jsx('video', {
+	        preload: true,
+	        playsInline: true,
+	        autoPlay: true,
+	        muted: true,
+	        loop: true,
+	        className: '' + _PortfolioVideo2.default['video-container'],
+	        style: this.state.vidStyle
+	      }, void 0, _jsx('source', {
+	        src: this.props.srcPath,
+	        type: 'video/mp4'
+	      }));
+	    }
+	  }]);
+
+	  return PortfolioVideo;
+	}(_react.Component);
 
 	exports.default = PortfolioVideo;
 

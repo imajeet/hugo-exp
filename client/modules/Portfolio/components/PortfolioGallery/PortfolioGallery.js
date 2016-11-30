@@ -14,7 +14,7 @@ const PortfolioGallery = (props) => {
                 key={i}
                 className={` 
                   ${an.animated}
-                  ${an.fadeInRight}
+                  ${an.fadeInDown}
                 `}
                 style={{
                   WebkitAnimationDuration: '1s',
