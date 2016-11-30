@@ -39,7 +39,7 @@ const Navigation = (props) => {
         // reset animations
         props.dispatch(setLeaveAnimationAction(`${style['un-invis']}`));
         props.router.push(route);
-      }, 1100);
+      }, 1500);
     }
   };
 

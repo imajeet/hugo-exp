@@ -2304,7 +2304,7 @@
 	        // reset animations
 	        props.dispatch(setLeaveAnimationAction('' + _Navigation2.default['un-invis']));
 	        props.router.push(route);
-	      }, 1100);
+	      }, 1500);
 	    }
 	  };
 
