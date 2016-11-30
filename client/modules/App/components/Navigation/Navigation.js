@@ -50,7 +50,7 @@ const Navigation = (props) => {
       }
         break;
       case '/me': {
-        routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOut}`);
+        routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOutLeft}`);
       }
         break;
       case '/portfolio': {

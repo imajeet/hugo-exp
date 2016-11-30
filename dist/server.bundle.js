@@ -2321,7 +2321,7 @@
 	        break;
 	      case '/me':
 	        {
-	          routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.fadeOut);
+	          routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.fadeOutLeft);
 	        }
 	        break;
 	      case '/portfolio':
