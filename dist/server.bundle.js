@@ -1966,6 +1966,8 @@
 	// http://stackoverflow.com/a/34015469/988941
 	(0, _reactTapEventPlugin2.default)();
 
+	var _ref = _jsx(_DevTools2.default, {});
+
 	var App = exports.App = function (_Component) {
 	  _inherits(App, _Component);
 
@@ -2032,7 +2034,7 @@
 	      var muiTheme = (0, _styles.getMuiTheme)(_AppTheme2.default, { userAgent: navigator ? navigator.userAgent : 'all' });
 	      return _jsx(_MuiThemeProvider2.default, {
 	        muiTheme: muiTheme
-	      }, void 0, _jsx('div', {}, void 0, _jsx('div', {}, void 0, _jsx(_reactHelmet2.default, {
+	      }, void 0, _jsx('div', {}, void 0, this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && _ref, _jsx('div', {}, void 0, _jsx(_reactHelmet2.default, {
 	        title: 'Hugo Experience',
 	        titleTemplate: '%s',
 	        meta: [{ charset: 'utf-8' }, {
