@@ -600,7 +600,7 @@
 	  return _jsx('div', {
 	    className: _Home2.default['home-container'] + ' ' + _animate2.default.animated + ' ' + leaveAnimation + ' ' + _Home2.default['font-decor']
 	  }, void 0, _jsx('div', {
-	    className: _Home2.default['home-header'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInDown,
+	    className: _Home2.default['home-header'] + ' ' + _animate2.default.animated + ' ' + leaveAnimation + ' ' + _animate2.default.fadeInDown,
 	    style: {
 	      AnimationDelay: '3.5s',
 	      AnimationDuration: '1s',
@@ -613,7 +613,7 @@
 	    className: '' + _Home2.default['self-copy']
 	  }, void 0, Object.keys(itemDetails).map(function (detail, i) {
 	    return _jsx('div', {
-	      className: _Home2.default.item + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInLeft,
+	      className: _Home2.default.item + ' ' + _animate2.default.animated + ' ' + leaveAnimation + ' ' + _animate2.default.fadeInLeft,
 	      style: {
 	        WebkitAnimationDelay: i + 0.5 + 's',
 	        WebkitAnimationDuration: '1s',
@@ -2321,7 +2321,7 @@
 	        break;
 	      case '/me':
 	        {
-	          routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.fadeOutLeft);
+	          routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.fadeOut);
 	        }
 	        break;
 	      case '/portfolio':

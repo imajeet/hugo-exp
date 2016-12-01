@@ -16,7 +16,7 @@ const Home = ({ leaveAnimation }) => {
   return (
     <div className={`${styles['home-container']} ${an.animated} ${leaveAnimation} ${styles['font-decor']}`}>
       <div
-        className={`${styles['home-header']} ${an.animated} ${an.fadeInDown}`}
+        className={`${styles['home-header']} ${an.animated} ${leaveAnimation} ${an.fadeInDown}`}
         style={{
           AnimationDelay: '3.5s',
           AnimationDuration: '1s',
@@ -31,7 +31,7 @@ const Home = ({ leaveAnimation }) => {
           {
             Object.keys(itemDetails).map((detail, i) => (
               <div
-                className={`${styles.item} ${an.animated} ${an.fadeInLeft}`}
+                className={`${styles.item} ${an.animated} ${leaveAnimation} ${an.fadeInLeft}`}
                 style={{
                   WebkitAnimationDelay: `${i + 0.5}s`,
                   WebkitAnimationDuration: '1s',
