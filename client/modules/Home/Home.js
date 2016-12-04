@@ -24,7 +24,7 @@ const Home = ({ leaveAnimation }) => {
           WebkitAnimationDuration: '1s',
         }}
       >
-        <h1>Hugo</h1>
+        <h1>Bienvenido</h1>
       </div>
       <div className={`${styles['welcome-copy']}`}>
         <div className={`${styles['self-copy']}`}>
