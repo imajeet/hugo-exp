@@ -1,0 +1,78 @@
+.contact-container {
+    font-family: AvenirNext;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.contact-container .content h1 {
+    text-align: justify;
+    font-size: 20px;
+    color: #464647;
+    margin-bottom: 40px;
+    line-height: 22px;
+    letter-spacing: 5px;
+}
+
+.contact-container .content p {
+    text-align: justify;
+    font-size: 14px;
+    color: #464647;
+    margin-bottom: 40px;
+    line-height: 22px;
+    letter-spacing: 1px;
+}
+
+.contact-container .content p span {
+    font-size: 40px;
+    color: darkgoldenrod;
+}
+
+.contact-container .content {
+    max-width: 400px;
+    float: right;
+    margin: 0 70px 0 0;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.contact-excerpt {
+    color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-container {
+        position: relative;
+        width: 70%;
+        top: 60px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .contact-container {
+        position: relative;
+        width: 80%;
+        top: 60px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .contact-container {
+        position: relative;
+        width: 90%;
+        top: 60px;
+    }
+}

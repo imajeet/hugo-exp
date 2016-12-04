@@ -20,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Portfolio/Portfolio');
   require('./modules/Home/Home');
   require('./modules/AboutMe/AboutMe');
+  require('./modules/Contact/Contact');
 }
 
 // react-router setup with code-splitting
@@ -44,6 +45,13 @@ export default (
       path="/portfolio" getComponent={(nextState, cb) => {
         require.ensure([], (require) => {
           cb(null, require('./modules/Portfolio/Portfolio').default);
+        });
+      }}
+    />
+    <Route
+      path="/contact" getComponent={(nextState, cb) => {
+        require.ensure([], (require) => {
+          cb(null, require('./modules/Contact/Contact').default);
         });
       }}
     />

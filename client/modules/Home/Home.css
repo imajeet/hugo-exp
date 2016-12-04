@@ -21,9 +21,8 @@
 }
 
 .home-header h1 {
-    padding: 1vmin;
     transform-origin: 0% 0%;
-    transform: translateX(130%);
+    transform: translateX(80%);
 }
 
 .welcome-copy {
@@ -61,5 +60,8 @@
 @media only screen and (max-width: 600px) {
     .self-copy {
         left: 90px;
+    }
+    .home-header h1 {
+        transform: translateX(50%);
     }
 }

@@ -14,6 +14,7 @@ import style from './Navigation.css';
 import { setLeaveAnimation as setHomeLeaveAnimation } from '../../../Home/HomeActions';
 import { setLeaveAnimation as setPortfolioLeaveAnimation } from '../../../Portfolio/PortfolioActions';
 import { setLeaveAnimation as setAboutMeLeaveAnimation } from '../../../AboutMe/AboutMeActions';
+import { setLeaveAnimation as setContactLeaveAnimation } from '../../../Contact/ContactActions';
 
 const muiStyle = {
   drawerContainer: { WebkitTransition: 'width 1s', overflow: 'hidden' },
@@ -39,30 +40,27 @@ const Navigation = (props) => {
         // reset animations
         props.dispatch(setLeaveAnimationAction(`${style['un-invis']}`));
         props.router.push(route);
-      }, 1500);
+      }, 1000);
     }
   };
 
-  const mapAnimationToRouteHandler = (route) => {
+  const mapAnimationToRouteHandler = (route) => { // eslint-disable-line
     switch (route) {
-      case '/': {
-        routeHandler(route, setHomeLeaveAnimation, `${an.fadeOutLeft}`);
-      }
-        break;
-      case '/me': {
-        routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOut}`);
-      }
-        break;
-      case '/portfolio': {
-        routeHandler(route, setPortfolioLeaveAnimation, `${an.fadeOutLeft}`);
-      }
-        break;
+      case '/':
+        return routeHandler(route, setHomeLeaveAnimation, `${an.fadeOutLeft}`);
+      case '/me':
+        return routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOut}`);
+      case '/portfolio':
+        return routeHandler(route, setPortfolioLeaveAnimation, `${an.fadeOutLeft}`);
+      case '/contact':
+        return routeHandler(route, setContactLeaveAnimation, `${an.fadeOutLeft}`);
       default:
         break;
     }
   };
 
   const mapLablesToHandlers = {
+    Contact: { routeHandler: () => mapAnimationToRouteHandler('/contact') },
     Portfolio: { routeHandler: () => mapAnimationToRouteHandler('/portfolio') },
     Me: { routeHandler: () => mapAnimationToRouteHandler('/me') },
     Home: { routeHandler: () => mapAnimationToRouteHandler('/') },
@@ -73,7 +71,7 @@ const Navigation = (props) => {
       key={mappedLabel}
       className={`${an.animated} ${an.fadeInRight}`}
       style={{
-        WebkitAnimationDelay: `${i + 1}s`,
+        WebkitAnimationDelay: `${i + 4.5}s`,
         WebkitAnimationDuration: '1s',
       }}
     >

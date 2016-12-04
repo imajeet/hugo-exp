@@ -36,11 +36,9 @@ import rawBaseTheme from '../client/modules/App/AppTheme';
 
 // Import required modules
 import routes from '../client/routes';
-import analyzed from './routes/analyzed.route';
 import cors from 'cors';
 
 import { fetchComponentData } from './util/fetchData';
-import posts from './routes/post.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
@@ -66,10 +64,10 @@ app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist')));
-app.use('/api', posts);
+// app.use('/api', posts);
 
-// Analyzer
-app.use('/api', analyzed);
+// // Analyzer
+// app.use('/api', analyzed);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {

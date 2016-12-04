@@ -1,5 +1,5 @@
 import { Router } from 'express';
-// import * as AboutMeController from '../controllers/aboutMe.controller';
+// import * as ContactController from '../controllers/Contact.controller';
 
 const router = new Router();
 
