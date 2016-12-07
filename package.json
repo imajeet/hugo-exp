@@ -1,7 +1,7 @@
 {
-  "name": "mern-material-ui-starter",
+  "name": "hugo-exp",
   "version": "0.0.1",
-  "description": "Human Resources Analysis Assistant",
+  "description": "Web Application to showcase Portfolio",
   "scripts": {
     "test": "cross-env NODE_ENV=test PORT=0 node_modules/.bin/nyc node node_modules/.bin/ava",
     "watch:test": "npm run test -- --watch",
