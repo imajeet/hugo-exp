@@ -34,12 +34,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { getMuiTheme } from 'material-ui/styles';
 import rawBaseTheme from '../client/modules/App/AppTheme';
 
+// Routes
+import contactRoutes from './routes/contact.routes';
+
 // Import required modules
 import routes from '../client/routes';
 import cors from 'cors';
 
 import { fetchComponentData } from './util/fetchData';
-import dummyData from './dummyData';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -51,9 +53,6 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
     console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
     throw error;
   }
-
-  // feed some dummy data in DB.
-  dummyData();
 });
 
 // Allow cors
@@ -68,6 +67,7 @@ app.use(Express.static(path.resolve(__dirname, '../dist')));
 
 // // Analyzer
 // app.use('/api', analyzed);
+app.use('/api', contactRoutes);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {

@@ -1,10 +1,11 @@
 // Import Actions
-import { SET_LEAVE_ANIMATION, ENABLE_SUBMIT, DISABLE_SUBMIT } from './ContactActions';
+import { SET_LEAVE_ANIMATION, SHOW_SWAL, HIDE_SWAL, SUBMIT_FORM } from './ContactActions';
 
 // Initial State
 const initialState = {
   animation: '',
-  canSubmit: false,
+  data: {},
+  showSwal: false,
 };
 
 const ContactReducer = (state = initialState, action) => {
@@ -13,13 +14,17 @@ const ContactReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         animation: action.animation,
       });
-    case ENABLE_SUBMIT:
+    case SHOW_SWAL:
       return Object.assign({}, state, {
-        canSubmit: true,
+        showSwal: true,
       });
-    case DISABLE_SUBMIT:
+    case HIDE_SWAL:
       return Object.assign({}, state, {
-        canSubmit: false,
+        showSwal: false,
+      });
+    case SUBMIT_FORM:
+      return Object.assign({}, state, {
+        data: action.data,
       });
     default:
       return state;
@@ -27,5 +32,7 @@ const ContactReducer = (state = initialState, action) => {
 };
 
 export const getLeaveAnimation = state => state.contact.animation;
-export const getSubmitStatus = state => state.contact.canSubmit;
+export const getContactData = state => state.contact.data;
+export const getSwal = state => state.contact.showSwal;
+
 export default ContactReducer;

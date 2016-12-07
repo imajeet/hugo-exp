@@ -2,6 +2,7 @@
  * Main store function
  */
 import { createStore, applyMiddleware, compose } from 'redux';
+import { enableBatching } from 'redux-batched-actions';
 import thunk from 'redux-thunk';
 import DevTools from './modules/App/components/DevTools';
 import rootReducer from './reducers';
@@ -17,7 +18,7 @@ export function configureStore(initialState = {}) {
     enhancers.push(window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
   }
 
-  const store = createStore(rootReducer, initialState, compose(...enhancers));
+  const store = createStore(enableBatching(rootReducer), initialState, compose(...enhancers));
 
   // For hot reloading reducers
   if (module.hot) {

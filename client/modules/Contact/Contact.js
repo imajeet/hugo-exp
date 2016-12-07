@@ -1,21 +1,14 @@
+const isBrowser = typeof window !== 'undefined';
 import React, { PropTypes, Component } from 'react';
-import { connect } from 'react-redux';
+const SweetAlert = isBrowser ? require('sweetalert-react').default : undefined; // eslint-disable-line
+if (isBrowser) { require('sweetalert/dist/sweetalert.css'); } // eslint-disable-line 
 import Formsy from 'formsy-react';
+import { FormsyText } from 'formsy-material-ui/lib';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import {
-  enableSubmit as enableSubmitAction,
-  disableSubmit as disableSubmitAction,
-  submitForm as submitFormAction,
-} from './ContactActions';
-
-import { getLeaveAnimation, getSubmitStatus } from './ContactReducer';
-
-import {
-  // FormsyCheckbox, FormsyDate, FormsyRadio, FormsyRadioGroup,
-  // FormsySelect, FormsyTime, FormsyToggle, FormsyAutoComplete,
-  FormsyText,
-} from 'formsy-material-ui/lib';
+import { connect } from 'react-redux';
+import { submitFormRequest, hideSwal } from './ContactActions';
+import { getLeaveAnimation, getSwal } from './ContactReducer';
 
 import an from '../../assets/animate.css';
 import styles from './Contact.css';
@@ -29,27 +22,22 @@ const errorMessages = {
 class Contact extends Component {
   constructor(props) {
     super(props);
-
+    this.state = { swal: '' };
     this.submitForm = this.submitForm.bind(this);
-    this.enableSubmit = this.enableSubmit.bind(this);
-    this.disableSubmit = this.disableSubmit.bind(this);
     this.notifyFormError = this.notifyFormError.bind(this);
   }
 
-  enableSubmit() {
-    this.props.dispatch(enableSubmitAction());
-  }
-
-  disableSubmit() {
-    this.props.dispatch(disableSubmitAction());
-  }
-
   submitForm(data) {
-    this.props.dispatch(submitFormAction(data));
+    this.props.dispatch(submitFormRequest(data));
+
+    this.nameText.setState({ value: '' });
+    this.emailText.setState({ value: '' });
+    this.phoneText.setState({ value: '' });
+    this.inquiryText.setState({ value: '' });
   }
 
   notifyFormError(data) {
-    console.error('Form error:', data);
+    console.log('Error submitting form: ', data);
   }
 
   render() {
@@ -59,7 +47,7 @@ class Contact extends Component {
           <h1>Contact</h1>
           <div className={styles['contact-excerpt']}>
             <p>
-              <span>I&rsquo;</span> am always looking to connect with individuals who are seeking a Freelance Fullstack Developer.
+              <span>I&rsquo;</span> am always looking forward to connecting with individuals who require consultation from a Full Stack Developer or simply anyone looking to talk code to further their understanding.
             </p>
           </div>
 
@@ -72,6 +60,7 @@ class Contact extends Component {
             >
               <FormsyText
                 name="name"
+                ref={node => this.nameText = node}
                 validations="isWords"
                 validationError={errorMessages.nameError}
                 required
@@ -80,6 +69,7 @@ class Contact extends Component {
               />
               <FormsyText
                 name="email"
+                ref={node => this.emailText = node}
                 validations="isEmail"
                 validationError={errorMessages.emailError}
                 required
@@ -88,6 +78,7 @@ class Contact extends Component {
               />
               <FormsyText
                 name="phone"
+                ref={node => this.phoneText = node}
                 validations="isNumeric"
                 validationError={errorMessages.phoneError}
                 required
@@ -97,6 +88,7 @@ class Contact extends Component {
               <br />
               <FormsyText
                 name="inquiry"
+                ref={node => this.inquiryText = node}
                 required
                 multiLine
                 floatingLabelFixed
@@ -106,9 +98,17 @@ class Contact extends Component {
               <RaisedButton
                 type="submit"
                 label="Connect"
-                disabled={!this.props.canSubmit}
               />
             </Formsy.Form>
+            {
+              isBrowser ? <SweetAlert
+                show={this.props.showSwal}
+                type="success"
+                title="Awesome!"
+                text="I look forward to connecting with you soon!"
+                onConfirm={() => this.props.dispatch(hideSwal())}
+              /> : 'Loading'
+            }
           </div>
         </div>
       </div>
@@ -119,13 +119,13 @@ class Contact extends Component {
 Contact.propTypes = {
   leaveAnimation: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
-  canSubmit: PropTypes.bool.isRequired,
+  showSwal: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
     leaveAnimation: getLeaveAnimation(state),
-    canSubmit: getSubmitStatus(state),
+    showSwal: getSwal(state),
   };
 };
 
