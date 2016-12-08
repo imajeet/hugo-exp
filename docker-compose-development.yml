@@ -12,6 +12,8 @@ web:
    MONGO_URL: mongodb://db:27017/hugo-exp
 db:
   image: mongo:latest
+  volumes:
+   - ~/data/mongo:/data/db # "~/data/mongo" needs to be created on host to store MongoDB data
   ports:
    - "27017:27017"
 
