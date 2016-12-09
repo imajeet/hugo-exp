@@ -358,7 +358,7 @@
 	  var leaveAnimation = _ref.leaveAnimation;
 
 	  return _jsx('div', {
-	    className: _AboutMe2.default['about-me-container'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInLeft + ' ' + leaveAnimation
+	    className: _AboutMe2.default['about-me-container'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.slideInLeft + ' ' + leaveAnimation
 	  }, void 0, _jsx('div', {
 	    className: _AboutMe2.default.text
 	  }, void 0, _ref2, _ref3, _ref4, _ref5, _ref6));
@@ -700,7 +700,7 @@
 	      var _this2 = this;
 
 	      return _jsx('div', {
-	        className: _Contact2.default['contact-container'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.fadeInLeft + ' ' + this.props.leaveAnimation
+	        className: _Contact2.default['contact-container'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.slideInLeft + ' ' + this.props.leaveAnimation
 	      }, void 0, _jsx('div', {
 	        className: _Contact2.default.content
 	      }, void 0, _ref, _jsx('div', {
@@ -972,9 +972,9 @@
 	  }, void 0, _jsx('div', {
 	    className: _Home2.default['home-header'] + ' ' + _animate2.default.animated + ' ' + leaveAnimation + ' ' + _animate2.default.fadeInDown,
 	    style: {
-	      AnimationDelay: '3.5s',
+	      AnimationDelay: '4s',
 	      AnimationDuration: '1s',
-	      WebkitAnimationDelay: '3.5s',
+	      WebkitAnimationDelay: '4s',
 	      WebkitAnimationDuration: '1s'
 	    }
 	  }, void 0, _ref2), _jsx('div', {
@@ -985,9 +985,9 @@
 	    return _jsx('div', {
 	      className: _Home2.default.item + ' ' + _animate2.default.animated + ' ' + leaveAnimation + ' ' + _animate2.default.fadeInLeft,
 	      style: {
-	        WebkitAnimationDelay: i + 0.5 + 's',
+	        WebkitAnimationDelay: i + 1 + 's',
 	        WebkitAnimationDuration: '1s',
-	        AnimationDelay: i + 0.5 + 's',
+	        AnimationDelay: i + 1 + 's',
 	        AnimationDuration: '1s'
 	      }
 	    }, detail, _jsx('h3', {}, void 0, detail), _jsx('p', {}, void 0, itemDetails[detail]));
@@ -2369,7 +2369,7 @@
 	            drawerWidth: 86,
 	            videoMarginLeft: '86px'
 	          });
-	        }, 4500);
+	        }, 5500);
 	      } else {
 	        this.setState({ // eslint-disable-line
 	          drawerOpen: false,
@@ -2653,8 +2653,14 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var muiStyle = {
-	  drawerContainer: { WebkitTransition: 'width 1s', overflow: 'hidden' },
-	  hoverColor: 'rgba(99.2%, 84.7%, 20.8%, 0.2)',
+	  drawerContainer: {
+	    WebkitTransition: 'width 1s',
+	    WebkitAnimationDuration: '1s',
+	    transition: 'width 1s',
+	    AnimationDuration: '1s',
+	    overflow: 'hidden'
+	  },
+	  hoverColor: 'rgb(100,133,135)',
 	  ripple: 'rgba(100%, 100%, 0%, 1.0)',
 	  fontDecor: { fontFamily: 'AvenirNext', fontSize: '14px', letterSpacing: '2px', textAlign: 'center' },
 	  appBar: {
@@ -2686,13 +2692,13 @@
 	    // eslint-disable-line
 	    switch (route) {
 	      case '/':
-	        return routeHandler(route, _HomeActions.setLeaveAnimation, '' + _animate2.default.fadeOutLeft);
+	        return routeHandler(route, _HomeActions.setLeaveAnimation, '' + _animate2.default.slideOutLeft);
 	      case '/me':
 	        return routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.fadeOut);
 	      case '/portfolio':
-	        return routeHandler(route, _PortfolioActions.setLeaveAnimation, '' + _animate2.default.fadeOutLeft);
+	        return routeHandler(route, _PortfolioActions.setLeaveAnimation, '' + _animate2.default.slideOutLeft);
 	      case '/contact':
-	        return routeHandler(route, _ContactActions.setLeaveAnimation, '' + _animate2.default.fadeOutLeft);
+	        return routeHandler(route, _ContactActions.setLeaveAnimation, '' + _animate2.default.slideOutLeft);
 	      default:
 	        break;
 	    }
@@ -2718,12 +2724,12 @@
 	      return _jsx('div', {
 	        className: _animate2.default.animated + ' ' + _animate2.default.fadeInRight,
 	        style: {
-	          WebkitAnimationDelay: i + 4.5 + 's',
-	          WebkitAnimationDuration: '1s'
+	          WebkitAnimationDelay: i + 6.5 + 's',
+	          WebkitAnimationDuration: '0.8s'
+
 	        }
 	      }, mappedLabel, _jsx(_FlatButton2.default, {
-	        primary: true,
-	        style: muiStyle.fontDecor,
+	        labelStyle: muiStyle.fontDecor,
 	        onTouchTap: mapLablesToHandlers[mappedLabel].routeHandler,
 	        label: mappedLabel,
 	        labelPosition: 'before',
@@ -2734,12 +2740,11 @@
 	  };
 	  var createAppBarMenu = function createAppBarMenu() {
 	    return Object.keys(mapLablesToHandlers).map(function (mappedLabel) {
-	      return _jsx('div', {}, mappedLabel, _jsx(_MenuItem2.default, {
-	        primary: true,
+	      return _jsx(_MenuItem2.default, {
 	        style: muiStyle.fontDecor,
 	        onTouchTap: mapLablesToHandlers[mappedLabel].routeHandler,
 	        primaryText: mappedLabel
-	      }));
+	      }, mappedLabel);
 	    });
 	  };
 

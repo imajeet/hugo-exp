@@ -43,7 +43,7 @@ export class App extends Component {
           drawerWidth: 86,
           videoMarginLeft: '86px',
         });
-      }, 4500);
+      }, 5500);
     } else {
       this.setState({ // eslint-disable-line
         drawerOpen: false,

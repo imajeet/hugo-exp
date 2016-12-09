@@ -42,7 +42,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className={`${styles['contact-container']} ${an.animated} ${an.fadeInLeft} ${this.props.leaveAnimation}`}>
+      <div className={`${styles['contact-container']} ${an.animated} ${an.slideInLeft} ${this.props.leaveAnimation}`}>
         <div className={styles.content}>
           <h1>Contact</h1>
           <div className={styles['contact-excerpt']}>

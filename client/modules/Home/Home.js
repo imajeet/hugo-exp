@@ -18,9 +18,9 @@ const Home = ({ leaveAnimation }) => {
       <div
         className={`${styles['home-header']} ${an.animated} ${leaveAnimation} ${an.fadeInDown}`}
         style={{
-          AnimationDelay: '3.5s',
+          AnimationDelay: '4s',
           AnimationDuration: '1s',
-          WebkitAnimationDelay: '3.5s',
+          WebkitAnimationDelay: '4s',
           WebkitAnimationDuration: '1s',
         }}
       >
@@ -33,9 +33,9 @@ const Home = ({ leaveAnimation }) => {
               <div
                 className={`${styles.item} ${an.animated} ${leaveAnimation} ${an.fadeInLeft}`}
                 style={{
-                  WebkitAnimationDelay: `${i + 0.5}s`,
+                  WebkitAnimationDelay: `${i + 1}s`,
                   WebkitAnimationDuration: '1s',
-                  AnimationDelay: `${i + 0.5}s`,
+                  AnimationDelay: `${i + 1}s`,
                   AnimationDuration: '1s',
                 }}
                 key={detail}

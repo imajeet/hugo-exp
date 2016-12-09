@@ -8,7 +8,7 @@ import style from './AboutMe.css';
 
 const AboutMe = ({ leaveAnimation }) => {
   return (
-    <div className={`${style['about-me-container']} ${an.animated} ${an.fadeInLeft} ${leaveAnimation}`}>
+    <div className={`${style['about-me-container']} ${an.animated} ${an.slideInLeft} ${leaveAnimation}`}>
       <div className={style.text}>
         <h2>About Me</h2>
         <p>

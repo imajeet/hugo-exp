@@ -17,8 +17,14 @@ import { setLeaveAnimation as setAboutMeLeaveAnimation } from '../../../AboutMe/
 import { setLeaveAnimation as setContactLeaveAnimation } from '../../../Contact/ContactActions';
 
 const muiStyle = {
-  drawerContainer: { WebkitTransition: 'width 1s', overflow: 'hidden' },
-  hoverColor: 'rgba(99.2%, 84.7%, 20.8%, 0.2)',
+  drawerContainer: {
+    WebkitTransition: 'width 1s',
+    WebkitAnimationDuration: '1s',
+    transition: 'width 1s',
+    AnimationDuration: '1s',
+    overflow: 'hidden',
+  },
+  hoverColor: 'rgb(100,133,135)',
   ripple: 'rgba(100%, 100%, 0%, 1.0)',
   fontDecor: { fontFamily: 'AvenirNext', fontSize: '14px', letterSpacing: '2px', textAlign: 'center' },
   appBar: {
@@ -47,13 +53,13 @@ const Navigation = (props) => {
   const mapAnimationToRouteHandler = (route) => { // eslint-disable-line
     switch (route) {
       case '/':
-        return routeHandler(route, setHomeLeaveAnimation, `${an.fadeOutLeft}`);
+        return routeHandler(route, setHomeLeaveAnimation, `${an.slideOutLeft}`);
       case '/me':
         return routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOut}`);
       case '/portfolio':
-        return routeHandler(route, setPortfolioLeaveAnimation, `${an.fadeOutLeft}`);
+        return routeHandler(route, setPortfolioLeaveAnimation, `${an.slideOutLeft}`);
       case '/contact':
-        return routeHandler(route, setContactLeaveAnimation, `${an.fadeOutLeft}`);
+        return routeHandler(route, setContactLeaveAnimation, `${an.slideOutLeft}`);
       default:
         break;
     }
@@ -71,13 +77,12 @@ const Navigation = (props) => {
       key={mappedLabel}
       className={`${an.animated} ${an.fadeInRight}`}
       style={{
-        WebkitAnimationDelay: `${i + 4.5}s`,
-        WebkitAnimationDuration: '1s',
+        WebkitAnimationDelay: `${i + 6.5}s`,
+        WebkitAnimationDuration: '0.8s',
       }}
     >
       <FlatButton
-        primary
-        style={muiStyle.fontDecor}
+        labelStyle={muiStyle.fontDecor}
         onTouchTap={mapLablesToHandlers[mappedLabel].routeHandler}
         label={mappedLabel}
         labelPosition="before"
@@ -87,16 +92,12 @@ const Navigation = (props) => {
     </div>
   );
   const createAppBarMenu = () => Object.keys(mapLablesToHandlers).map((mappedLabel) =>
-    <div
+    <MenuItem
+      style={muiStyle.fontDecor}
+      onTouchTap={mapLablesToHandlers[mappedLabel].routeHandler}
+      primaryText={mappedLabel}
       key={mappedLabel}
-    >
-      <MenuItem
-        primary
-        style={muiStyle.fontDecor}
-        onTouchTap={mapLablesToHandlers[mappedLabel].routeHandler}
-        primaryText={mappedLabel}
-      />
-    </div>
+    />
   );
 
   return (

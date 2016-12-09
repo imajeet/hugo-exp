@@ -5,7 +5,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     background-color: white;
     overflow-y: scroll;
@@ -38,7 +38,7 @@
     max-width: 400px;
     float: right;
     margin: 0 70px 0 0;
-    width: 45%;
+    width: 55%;
     box-sizing: border-box;
 }
 
@@ -52,6 +52,13 @@
 
 .contact-excerpt {
     color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-container .content {
+        margin: 0 70px 0 0;
+        width: 45%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
