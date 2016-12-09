@@ -11,11 +11,11 @@
     overflow-y: scroll;
 }
 
-.about-me-container .text h2 {
+.about-me-container .text h1 {
     text-align: justify;
     font-size: 20px;
     color: #464647;
-    margin-bottom: 40px;
+    margin: 40px 0;
     line-height: 22px;
     letter-spacing: 5px;
 }

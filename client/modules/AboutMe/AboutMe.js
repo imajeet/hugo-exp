@@ -10,7 +10,7 @@ const AboutMe = ({ leaveAnimation }) => {
   return (
     <div className={`${style['about-me-container']} ${an.animated} ${an.slideInLeft} ${leaveAnimation}`}>
       <div className={style.text}>
-        <h2>About Me</h2>
+        <h1>About Me</h1>
         <p>
           <span>I</span> am currently a contracted Software Engineer at a telecommunication startup, CallPal, where we’ve created an Application that allows users to call any where for free, mobile-to-mobile, or mobile-to-landline.
           </p>

@@ -344,7 +344,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _ref2 = _jsx('h2', {}, void 0, 'About Me');
+	var _ref2 = _jsx('h1', {}, void 0, 'About Me');
 
 	var _ref3 = _jsx('p', {}, void 0, _jsx('span', {}, void 0, 'I'), ' am currently a contracted Software Engineer at a telecommunication startup, CallPal, where we\u2019ve created an Application that allows users to call any where for free, mobile-to-mobile, or mobile-to-landline.');
 
@@ -653,6 +653,7 @@
 	  emailError: 'Your email is required',
 	  phoneError: 'Your phone number is required'
 	};
+	var formsyStyles = { fontDecor: { fontFamily: 'AvenirNext', fontSize: '14px', letterSpacing: '2px', textAlign: 'center' } };
 
 	var _ref = _jsx('h1', {}, void 0, 'Contact');
 
@@ -660,7 +661,10 @@
 
 	var _ref3 = _jsx('br', {});
 
-	var _ref4 = _jsx(_RaisedButton2.default, {
+	var _ref4 = _jsx('br', {});
+
+	var _ref5 = _jsx(_RaisedButton2.default, {
+	  fullWidth: true,
 	  type: 'submit',
 	  label: 'Connect'
 	});
@@ -714,6 +718,10 @@
 	        onInvalidSubmit: this.notifyFormError
 	      }, void 0, _react2.default.createElement(_lib.FormsyText, {
 	        name: 'name',
+	        floatingLabelFocusStyle: formsyStyles.fontDecor,
+	        floatingLabelStyle: formsyStyles.fontDecor,
+	        hintStyle: formsyStyles.fontDecor,
+	        inputStyle: formsyStyles.fontDecor,
 	        ref: function ref(node) {
 	          return _this2.nameText = node;
 	        },
@@ -724,6 +732,10 @@
 	        floatingLabelText: 'Name'
 	      }), _react2.default.createElement(_lib.FormsyText, {
 	        name: 'email',
+	        floatingLabelFocusStyle: formsyStyles.fontDecor,
+	        floatingLabelStyle: formsyStyles.fontDecor,
+	        hintStyle: formsyStyles.fontDecor,
+	        inputStyle: formsyStyles.fontDecor,
 	        ref: function ref(node) {
 	          return _this2.emailText = node;
 	        },
@@ -734,6 +746,10 @@
 	        floatingLabelText: 'Email'
 	      }), _react2.default.createElement(_lib.FormsyText, {
 	        name: 'phone',
+	        floatingLabelFocusStyle: formsyStyles.fontDecor,
+	        floatingLabelStyle: formsyStyles.fontDecor,
+	        hintStyle: formsyStyles.fontDecor,
+	        inputStyle: formsyStyles.fontDecor,
 	        ref: function ref(node) {
 	          return _this2.phoneText = node;
 	        },
@@ -744,15 +760,19 @@
 	        floatingLabelText: 'Phone'
 	      }), _ref3, _react2.default.createElement(_lib.FormsyText, {
 	        name: 'inquiry',
+	        hintText: '...the scope of your inquiry',
+	        floatingLabelText: 'Describe',
+	        floatingLabelFocusStyle: formsyStyles.fontDecor,
+	        floatingLabelStyle: formsyStyles.fontDecor,
+	        hintStyle: formsyStyles.fontDecor,
+	        inputStyle: formsyStyles.fontDecor,
 	        ref: function ref(node) {
 	          return _this2.inquiryText = node;
 	        },
 	        required: true,
 	        multiLine: true,
-	        floatingLabelFixed: true,
-	        floatingLabelText: 'Describe the scope of your inquiry',
 	        rows: 2
-	      }), _ref4), isBrowser ? _jsx(SweetAlert, {
+	      }), _ref4, _ref5), isBrowser ? _jsx(SweetAlert, {
 	        show: this.props.showSwal,
 	        type: 'success',
 	        title: 'Awesome!',
@@ -1208,16 +1228,15 @@
 	  link: 'https://hugo-exp.herokuapp.com/'
 	}];
 
-	var _ref2 = _jsx(_PortfolioGallery2.default, {
-	  data: data
-	});
-
 	var Portfolio = function Portfolio(_ref) {
 	  var leaveAnimation = _ref.leaveAnimation;
 
 	  return _jsx('div', {
 	    className: _animate2.default.animated + ' ' + leaveAnimation
-	  }, void 0, _ref2);
+	  }, void 0, _jsx(_PortfolioGallery2.default, {
+	    leaveAnimation: leaveAnimation,
+	    data: data
+	  }));
 	};
 
 	function mapStateToProps(state) {
@@ -2682,7 +2701,7 @@
 	      props.dispatch(setLeaveAnimationAction(animation));
 	      setTimeout(function () {
 	        // reset animations
-	        props.dispatch(setLeaveAnimationAction('' + _Navigation2.default['un-invis']));
+	        props.dispatch(setLeaveAnimationAction(''));
 	        props.router.push(route);
 	      }, 1000);
 	    }
@@ -2726,7 +2745,6 @@
 	        style: {
 	          WebkitAnimationDelay: i + 6.5 + 's',
 	          WebkitAnimationDuration: '0.8s'
-
 	        }
 	      }, mappedLabel, _jsx(_FlatButton2.default, {
 	        labelStyle: muiStyle.fontDecor,
@@ -3041,7 +3059,7 @@
 	    className: _flexboxgrid2.default.row + ' ' + _flexboxgrid2.default.reverse
 	  }, void 0, props.data.map(function (datum, i) {
 	    return _jsx('div', {
-	      className: ' \n                  ' + _animate2.default.animated + '\n                  ' + _animate2.default.fadeInDown + '\n                ',
+	      className: ' \n                  ' + _animate2.default.animated + '\n                  ' + _animate2.default.fadeInDown + '\n                  ' + props.leaveAnimation + '\n                ',
 	      style: {
 	        WebkitAnimationDuration: '1s',
 	        WebkitAnimationDelay: i + 1 + 's'

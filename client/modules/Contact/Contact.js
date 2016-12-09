@@ -18,7 +18,7 @@ const errorMessages = {
   emailError: 'Your email is required',
   phoneError: 'Your phone number is required',
 };
-
+const formsyStyles = { fontDecor: { fontFamily: 'AvenirNext', fontSize: '14px', letterSpacing: '2px', textAlign: 'center' } };
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -60,6 +60,10 @@ class Contact extends Component {
             >
               <FormsyText
                 name="name"
+                floatingLabelFocusStyle={formsyStyles.fontDecor}
+                floatingLabelStyle={formsyStyles.fontDecor}
+                hintStyle={formsyStyles.fontDecor}
+                inputStyle={formsyStyles.fontDecor}
                 ref={node => this.nameText = node}
                 validations="isWords"
                 validationError={errorMessages.nameError}
@@ -69,6 +73,10 @@ class Contact extends Component {
               />
               <FormsyText
                 name="email"
+                floatingLabelFocusStyle={formsyStyles.fontDecor}
+                floatingLabelStyle={formsyStyles.fontDecor}
+                hintStyle={formsyStyles.fontDecor}
+                inputStyle={formsyStyles.fontDecor}
                 ref={node => this.emailText = node}
                 validations="isEmail"
                 validationError={errorMessages.emailError}
@@ -78,6 +86,10 @@ class Contact extends Component {
               />
               <FormsyText
                 name="phone"
+                floatingLabelFocusStyle={formsyStyles.fontDecor}
+                floatingLabelStyle={formsyStyles.fontDecor}
+                hintStyle={formsyStyles.fontDecor}
+                inputStyle={formsyStyles.fontDecor}
                 ref={node => this.phoneText = node}
                 validations="isNumeric"
                 validationError={errorMessages.phoneError}
@@ -88,14 +100,19 @@ class Contact extends Component {
               <br />
               <FormsyText
                 name="inquiry"
+                hintText="...the scope of your inquiry"
+                floatingLabelText="Describe"
+                floatingLabelFocusStyle={formsyStyles.fontDecor}
+                floatingLabelStyle={formsyStyles.fontDecor}
+                hintStyle={formsyStyles.fontDecor}
+                inputStyle={formsyStyles.fontDecor}
                 ref={node => this.inquiryText = node}
                 required
                 multiLine
-                floatingLabelFixed
-                floatingLabelText="Describe the scope of your inquiry"
                 rows={2}
-              />
+              /><br />
               <RaisedButton
+                fullWidth
                 type="submit"
                 label="Connect"
               />

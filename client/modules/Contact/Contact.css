@@ -5,7 +5,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 50%;
     height: 100vh;
     background-color: white;
     overflow-y: scroll;
@@ -15,7 +15,7 @@
     text-align: justify;
     font-size: 20px;
     color: #464647;
-    margin-bottom: 40px;
+    margin: 40px 0;
     line-height: 22px;
     letter-spacing: 5px;
 }
@@ -24,7 +24,7 @@
     text-align: justify;
     font-size: 14px;
     color: #464647;
-    margin-bottom: 40px;
+    width: 90%;
     line-height: 22px;
     letter-spacing: 1px;
 }
@@ -37,7 +37,7 @@
 .contact-container .content {
     max-width: 400px;
     float: right;
-    margin: 0 70px 0 0;
+    margin: 0;
     width: 55%;
     box-sizing: border-box;
 }
@@ -50,11 +50,30 @@
     margin: 0 auto;
 }
 
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
 .contact-excerpt {
     color: #000;
 }
 
+@media only screen and (max-width: 1024) {
+    .contact-container .content p {
+        width: 115%;
+    }
+    .contact-container .content {
+        margin: 0 70px 0 0;
+        width: 65%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
+    .contact-container .content p {
+        width: 115%;
+    }
     .contact-container .content {
         margin: 0 70px 0 0;
         width: 45%;
@@ -70,13 +89,30 @@
 }
 
 @media only screen and (max-width: 425px) {
+    .contact-container .content p {
+        width: 120%;
+    }
     .contact-container {
         position: relative;
         width: 80%;
         top: 60px;
     }
 }
+
+@media only screen and (max-width: 375px) {
+    .contact-container .content p {
+        width: 126%;
+    }
+    .contact-container .content {
+        margin: 0 70px 0 0;
+        width: 55%;
+    }
+}
+
 @media only screen and (max-width: 320px) {
+    .contact-container .content p {
+        width: 132%;
+    }
     .contact-container {
         position: relative;
         width: 90%;

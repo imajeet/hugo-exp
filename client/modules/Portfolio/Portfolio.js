@@ -33,7 +33,7 @@ const data = [{
 const Portfolio = ({ leaveAnimation }) => {
   return (
     <div className={`${an.animated} ${leaveAnimation}`}>
-      <PortfolioGallery data={data} />
+      <PortfolioGallery leaveAnimation={leaveAnimation} data={data} />
     </div>
   );
 };

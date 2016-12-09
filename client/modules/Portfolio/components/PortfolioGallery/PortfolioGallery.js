@@ -15,6 +15,7 @@ const PortfolioGallery = (props) => {
                 className={` 
                   ${an.animated}
                   ${an.fadeInDown}
+                  ${props.leaveAnimation}
                 `}
                 style={{
                   WebkitAnimationDuration: '1s',
@@ -41,6 +42,7 @@ PortfolioGallery.propTypes = {
     title: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
   })).isRequired,
+  leaveAnimation: PropTypes.string.isRequired,
 };
 
 export default PortfolioGallery;
