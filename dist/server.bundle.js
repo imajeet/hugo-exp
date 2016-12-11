@@ -360,7 +360,7 @@
 	  return _jsx('div', {
 	    className: _AboutMe2.default['about-me-container'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.slideInLeft + ' ' + leaveAnimation
 	  }, void 0, _jsx('div', {
-	    className: _AboutMe2.default.text
+	    className: _AboutMe2.default.text + ' ' + _animate2.default.animated + ' ' + _animate2.default.slideInLeft + ' ' + leaveAnimation
 	  }, void 0, _ref2, _ref3, _ref4, _ref5, _ref6));
 	};
 
@@ -677,7 +677,6 @@
 
 	    var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this, props));
 
-	    _this.state = { swal: '' };
 	    _this.submitForm = _this.submitForm.bind(_this);
 	    _this.notifyFormError = _this.notifyFormError.bind(_this);
 	    return _this;
@@ -706,7 +705,7 @@
 	      return _jsx('div', {
 	        className: _Contact2.default['contact-container'] + ' ' + _animate2.default.animated + ' ' + _animate2.default.slideInLeft + ' ' + this.props.leaveAnimation
 	      }, void 0, _jsx('div', {
-	        className: _Contact2.default.content
+	        className: _Contact2.default.content + ' ' + _animate2.default.animated + ' ' + _animate2.default.slideInLeft + ' ' + this.props.leaveAnimation
 	      }, void 0, _ref, _jsx('div', {
 	        className: _Contact2.default['contact-excerpt']
 	      }, void 0, _ref2), _jsx('div', {
@@ -2713,7 +2712,7 @@
 	      case '/':
 	        return routeHandler(route, _HomeActions.setLeaveAnimation, '' + _animate2.default.slideOutLeft);
 	      case '/me':
-	        return routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.fadeOut);
+	        return routeHandler(route, _AboutMeActions.setLeaveAnimation, '' + _animate2.default.slideOutLeft);
 	      case '/portfolio':
 	        return routeHandler(route, _PortfolioActions.setLeaveAnimation, '' + _animate2.default.slideOutLeft);
 	      case '/contact':

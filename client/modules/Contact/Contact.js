@@ -22,7 +22,7 @@ const formsyStyles = { fontDecor: { fontFamily: 'AvenirNext', fontSize: '14px', 
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.state = { swal: '' };
+
     this.submitForm = this.submitForm.bind(this);
     this.notifyFormError = this.notifyFormError.bind(this);
   }
@@ -43,7 +43,7 @@ class Contact extends Component {
   render() {
     return (
       <div className={`${styles['contact-container']} ${an.animated} ${an.slideInLeft} ${this.props.leaveAnimation}`}>
-        <div className={styles.content}>
+        <div className={`${styles.content} ${an.animated} ${an.slideInLeft} ${this.props.leaveAnimation}`}>
           <h1>Contact</h1>
           <div className={styles['contact-excerpt']}>
             <p>

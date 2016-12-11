@@ -55,7 +55,7 @@ const Navigation = (props) => {
       case '/':
         return routeHandler(route, setHomeLeaveAnimation, `${an.slideOutLeft}`);
       case '/me':
-        return routeHandler(route, setAboutMeLeaveAnimation, `${an.fadeOut}`);
+        return routeHandler(route, setAboutMeLeaveAnimation, `${an.slideOutLeft}`);
       case '/portfolio':
         return routeHandler(route, setPortfolioLeaveAnimation, `${an.slideOutLeft}`);
       case '/contact':
