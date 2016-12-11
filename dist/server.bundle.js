@@ -3260,22 +3260,41 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function encode(str) {
+	  return Buffer.from(str).toString('base64');
+	}
+
+	function decode(str) {
+	  return Buffer.from(str, 'base64').toString();
+	}
+
+	function encodeContact(newContact) {
+	  var results = {};
+	  console.log(newContact);
+	  this.newContact = Object.keys(newContact).map(function (key) {
+	    return Object.assign(results, _defineProperty({}, key, '' + encode(newContact[key])));
+	  });
+	  return results;
+	}
+
 	function prepareEmail(newContact) {
 	  return {
-	    from: newContact.email, // sender address
+	    from: '<no-reply@hugocodes.com>', // sender address
 	    to: 'hugoce17@gmail.com', // list of receivers
-	    subject: 'HugoEXP Inquiry', // Subject line
-	    text: newContact.inquiry
+	    subject: 'HugoEXP: ' + newContact.name + ' Wants To Connect', // Subject line
+	    html: '\n      <div>\n        <h1>Contact Info</h1> <br />\n        <h3>Name: ' + newContact.name + '</h3>\n        <h3>Phone: ' + newContact.phone + '</h3>\n        <h3>Email: ' + newContact.email + '</h3> <br />\n        <h3>Inquiry: </h3>\n        <p>' + newContact.inquiry + '</p\n      </div>\n    '
 	  };
 	}
 
-	function sendEmail(mailOptions) {
+	function send(mailOptions, cb) {
 	  var transporter = _nodemailer2.default.createTransport('smtps://hugoce17%40gmail.com:ymaazbrgztbmldlt@smtp.gmail.com');
 	  transporter.sendMail(mailOptions, function (error, info) {
 	    if (error) {
-	      return console.log(error);
+	      return cb(error);
 	    }
-	    return console.log('Email Sent: ' + info.response);
+	    return cb(null, 'Email Sent: ' + info.response);
 	  });
 	}
 
@@ -3284,23 +3303,29 @@
 	    res.status(403).end();
 	  }
 
-	  // sanitize
 	  var newContact = new _contact2.default(req.body.data);
 
+	  // sanitize
 	  newContact.name = (0, _sanitizeHtml2.default)(newContact.name);
 	  newContact.phone = (0, _sanitizeHtml2.default)(newContact.phone);
 	  newContact.email = (0, _sanitizeHtml2.default)(newContact.email);
 	  newContact.inquiry = (0, _sanitizeHtml2.default)(newContact.inquiry);
-	  newContact.slug = (0, _limax2.default)(newContact.email.toLowerCase(), { lowercase: true });
+	  newContact.slug = (0, _limax2.default)((0, _sanitizeHtml2.default)(newContact.email).toLowerCase(), { lowercase: true });
 	  newContact.cuid = (0, _cuid2.default)();
+
+	  var preparedEmail = prepareEmail(newContact);
+
+	  send(preparedEmail, function (err, response) {
+	    if (err) return console.log(err);
+	    return console.log(response);
+	  });
 
 	  // save to db
 	  newContact.save(function (err, saved) {
 	    if (err) {
 	      res.status(500).send(err);
 	    }
-	    sendEmail(prepareEmail(newContact));
-	    res.json(saved);
+	    return res.json(saved);
 	  });
 	}
 

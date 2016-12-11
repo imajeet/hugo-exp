@@ -8,39 +8,31 @@
     width: 50%;
     height: 100vh;
     background-color: white;
-    overflow-y: scroll;
-}
-
-.about-me-container .text h1 {
-    text-align: justify;
-    font-size: 20px;
-    color: #464647;
-    margin: 40px 0;
-    line-height: 22px;
-    letter-spacing: 5px;
-}
-
-.about-me-container .text p {
-    text-align: justify;
-    font-size: 14px;
-    color: #464647;
-    margin-bottom: 40px;
-    line-height: 22px;
-    letter-spacing: 1px;
-}
-
-.about-me-container .text p span {
-  font-size: 40px;
-  color: darkgoldenrod;
-}
-
-.about-me-container .text {
+    overflow-y: scroll; }
+    .about-me-container .text {
     max-width: 400px;
     float: right;
     margin: 0 70px 0 0;
     width: 45%;
-    box-sizing: border-box;
-}
+    box-sizing: border-box; }
+        .about-me-container .text h1 {
+            text-align: justify;
+            font-size: 20px;
+            color: #464647;
+            margin: 40px 0;
+            line-height: 22px;
+            letter-spacing: 5px; }
+        .about-me-container .text p {
+            text-align: justify;
+            font-size: 14px;
+            color: #464647;
+            margin-bottom: 40px;
+            line-height: 22px;
+            letter-spacing: 1px; }
+            .about-me-container .text p span {
+                font-size: 40px;
+                color: darkgoldenrod; }
+
 
 @media only screen and (max-width: 600px) {
     .about-me-container {
