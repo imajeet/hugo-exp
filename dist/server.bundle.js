@@ -1124,6 +1124,10 @@
 
 	var _hugoExp2 = _interopRequireDefault(_hugoExp);
 
+	var _mernBlog = '/' + "ebd3d53c0a9e919f5ff872991a04dbca.png";
+
+	var _mernBlog2 = _interopRequireDefault(_mernBlog);
+
 	var _animate = {
 	  "animated": "_3r0mq9S7Wc2cm68zTdSanO",
 	  "infinite": "_39g1891yxx_Ju5xjjy1jzn",
@@ -1225,6 +1229,10 @@
 	  cardImagePath: _hugoExp2.default,
 	  title: 'HugoExp',
 	  link: 'https://hugo-exp.herokuapp.com/'
+	}, {
+	  cardImagePath: _mernBlog2.default,
+	  title: 'Mern Blog',
+	  link: 'http://mern-blog.herokuapp.com/'
 	}];
 
 	var Portfolio = function Portfolio(_ref) {
@@ -3259,25 +3267,6 @@
 	var _limax2 = _interopRequireDefault(_limax);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function encode(str) {
-	  return Buffer.from(str).toString('base64');
-	}
-
-	function decode(str) {
-	  return Buffer.from(str, 'base64').toString();
-	}
-
-	function encodeContact(newContact) {
-	  var results = {};
-	  console.log(newContact);
-	  this.newContact = Object.keys(newContact).map(function (key) {
-	    return Object.assign(results, _defineProperty({}, key, '' + encode(newContact[key])));
-	  });
-	  return results;
-	}
 
 	function prepareEmail(newContact) {
 	  return {

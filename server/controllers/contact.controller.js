@@ -4,23 +4,6 @@ import Contact from '../models/contact';
 import cuid from 'cuid';
 import slug from 'limax';
 
-function encode(str) {
-  return Buffer.from(str).toString('base64');
-}
-
-function decode(str) {
-  return Buffer.from(str, 'base64').toString();
-}
-
-function encodeContact(newContact) {
-  const results = {};
-  console.log(newContact);
-  this.newContact = Object.keys(newContact).map((key) => {
-    return Object.assign(results, { [key]: `${encode(newContact[key])}` });
-  });
-  return results;
-}
-
 function prepareEmail(newContact) {
   return {
     from: '<no-reply@hugocodes.com>', // sender address
