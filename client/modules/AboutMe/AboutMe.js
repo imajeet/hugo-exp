@@ -12,18 +12,33 @@ const AboutMe = ({ leaveAnimation }) => {
       <div className={`${style.text} ${an.animated} ${an.slideInLeft} ${leaveAnimation}`}>
         <h1>About Me</h1>
         <p>
-          <span>I</span> am currently a contracted Software Engineer at a telecommunication startup, CallPal, where we’ve created an Application that allows users to call any where for free, mobile-to-mobile, or mobile-to-landline.
-          </p>
-
+          <span>D&rsquo;</span>uring my Junior year of college, I decided I was going to become a Web Application Developer
+        and soon after college, I began searching for career opportunities that would let me acquire skills that could one
+        day summate to that of a Full Stack JavaScript Developer. I worked at a digital agency, SapientNitro, where I was
+        responsible for creating modular - reusable web components using just HTML5, CSS3, & JavaScript. We were only allowed
+        to use jQuery & GreenSock’s TweenMax animation library, as the client whom project team I was on wanted very little
+        third-party libraries. I really learned a lot about working in a fast pace environment and how to organize my time
+        to finish my contributions to meet deadlines as well as the strengths JavaScript provided within a browser environment.
+      </p>
         <p>
-          Since College, I’ve taken upon myself to become Fullstack JavaScript Developer where I work primarily with NodeJS which is a C++ Program that essentially let’s you write JavaScript to create many applications. I’ve used NodeJS to create CRON Jobs, run data migration tasks in parallel, author RESTful APIs using ExpressJS to be consumed by web & mobile clients, built front-end projects with Gulp or Webpack, etc. There are many problems that can be solved with NodeJS; from simple to complex.
-          </p>
+          Before being granted the opportunity to be a Front End developer at SapientNitro, I had completed a freelance project for a client
+        I met at Starbucks. The project was a landing page built with HTML5, CSS3, JavaScript, jQuery, & Bootstrap and it had to also allow for clients to connect with the owner of the company through email; so I built a web server with NodeJS to handle sending emails directly from the landing page. I then became more interested in Back End development with NodeJS and thus became the prologue towards becoming more Full Stack Savvy.
+      </p>
         <p>
-          The best part about making a living off coding is delivering a product while meeting client satisfaction and deadlines!
-          </p>
+          Recently, I was given the opportunity to work at my first start up, Callpal App, LLC where they had developed an app Callpal
+        App; purposed to allow users to make calls, app-to-app, or app-to-landline, for free. During my role there as a Software-Engineer,
+        I was tasked with various back-end systems that needed to: migrate data from MySQL to Couchbase stores, restructure
+        data for in house analytics and for B2B teams. The RESTful APIs were built on top of NodeJS and there I learned to
+        work in an Agile environment where I had to explain my progress in detail to my executives and team members every
+        step of the way during and after the completion of tasks posted and managed by JIRA.
+      </p>
         <p>
-          I’ve also done freelance for locals and am always seeking to stay up to date with modern technologies.
-          </p>
+          As you can see, aside from a few personal projects and collegiate level programming workload, I have obtained professional
+        experience in both front-end and back-end development. Everyday, I aim to become a better software developer and
+        am always looking for excuses to learn new philosophies in software development & design. Most recently, I have become
+        especially interested in distributive systems, artificial intelligence (machine learning), and how to leverage technology
+        to add value to current markets.
+      </p>
       </div>
     </div>
   );
