@@ -10,7 +10,7 @@ const Home = ({ leaveAnimation }) => {
   const itemDetails = {
     Technical: 'A natural tendency to consider the mechanics of things.',
     Visionary: 'I seek to capture the vision required to complete tasks.',
-    Passionate: 'To continue learning is to keep the mind young; I advocate towards continous growth.',
+    Passionate: 'To continue learning is to keep the mind young; I advocate towards continuous growth.',
   };
 
   return (
